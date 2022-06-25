@@ -1,0 +1,152 @@
+/**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ffffff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: "Fira Code", Consolas, Inconsolata, Monaco, "Courier New",
+    Courier, monospace;
+  font-size: 14px;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1.6rem;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #1f2937;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.4rem;
+  border-radius: 0.3em;
+  background: #f0efed;
+  color: var(--c-primary-dark);
+  text-shadow: none;
+  font-size: 1.6rem;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7c7c7c;
+}
+
+.token.punctuation {
+  color: rgba(186, 230, 253, 1);
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.attr-name,
+.token.keyword,
+.token.tag {
+  color: rgba(34, 211, 238, 1);
+}
+
+.token.class-name {
+  color: #ffffb6;
+  text-decoration: underline;
+}
+
+.token.constant {
+  color: white;
+}
+
+.token.symbol,
+.token.deleted {
+  color: #f92672;
+}
+
+.token.number,
+.token.boolean {
+  color: #ff73fd;
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: rgba(190, 242, 100, 1);
+}
+
+.token.variable {
+  color: #c6c5fe;
+}
+
+.token.operator {
+  color: #ededed;
+}
+
+.token.entity {
+  color: #ffffb6;
+  cursor: help;
+}
+
+.token.url {
+  color: #96cbfe;
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: #87c38a;
+}
+
+.token.atrule {
+  color: #f9ee98;
+}
+
+.token.attr-value {
+  color: rgba(190, 242, 100, 1);
+}
+
+.token.function {
+  color: rgba(232, 121, 249, 1);
+}
+
+.token.regex {
+  color: #e9c062;
+}
+
+.token.important {
+  color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}

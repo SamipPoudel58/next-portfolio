@@ -1,0 +1,91 @@
+body {
+  --c-bg-light: #1a2f55;
+  --c-bg-dark: #0d1d3a;
+
+  --c-primary: #0ea5e9;
+  --c-primary-light: #22d3ee;
+  --c-primary-dark: #0ea5e9;
+
+  --c-primary: #06b6d4;
+  --c-primary-light: #4ade80;
+  --c-primary-dark: #06b6d4;
+
+  --c-text-black: #1e1e1e;
+  --c-text-gray: #5a5a5a;
+  --c-gray-light: #dcdcdc;
+  --c-off-white: #f9fafb;
+  --c-blockquote: #f7f7f7;
+
+  --c-black: #000000;
+  --c-black-dark: #222222;
+  --c-black-md: #444444;
+}
+
+body.dark {
+  --c-off-white: #111111;
+  --c-gray-light: #222222;
+
+  --c-blockquote: #222222;
+
+  --c-black: #ffffff;
+  --c-black-dark: #eaeaea;
+  --c-black-md: #888888;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--c-gray-light);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--c-gray-light);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--c-primary);
+
+  // background-image: -webkit-gradient(
+  //   linear,
+  //   0 0,
+  //   0 100%,
+  //   color-stop(0.5, rgba(255, 255, 255, 0.2)),
+  //   color-stop(0.5, transparent),
+  //   to(transparent)
+  // );
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; // 1rem = 10px;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--c-off-white);
+  color: var(--c-black-md);
+
+  font-family: "Karla", "Roboto", sans-serif;
+  line-height: 1.7;
+}
+
+::selection {
+  background-color: var(--c-primary);
+  color: #ffffff;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,117 @@
+.skills {
+  margin-bottom: 8rem;
+  @media only screen and (max-width: 1024px) {
+    padding: 0 4rem;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__heading {
+    @media only screen and (max-width: 600px) {
+      text-align: left;
+    }
+  }
+  &__content {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media only screen and (max-width: 1024px) {
+      justify-content: center;
+    }
+    @media only screen and (max-width: 600px) {
+      // padding-top: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__names {
+    width: 50%;
+    border-right: 2px solid var(--c-gray-light);
+    @media only screen and (max-width: 800px) {
+      width: 60%;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      border: none;
+    }
+  }
+
+  &__category {
+    margin-bottom: 5rem;
+    &-name {
+      font-size: 2.4rem;
+      line-height: 1;
+      margin-bottom: 2rem;
+      color: var(--c-black-dark);
+
+      @media only screen and (max-width: 600px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__skills {
+    display: flex;
+
+    &-left,
+    &-right {
+      list-style: none;
+      font-size: 1.8rem;
+      width: 50%;
+      color: var(--c-black-md);
+
+      @media only screen and (max-width: 600px) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__logos {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10rem;
+    row-gap: 8rem;
+    max-width: 50%;
+    padding-left: 10rem;
+    @media only screen and (max-width: 1024px) {
+      row-gap: 5rem;
+      column-gap: 5rem;
+      padding-left: 5rem;
+    }
+    @media only screen and (max-width: 800px) {
+      padding-left: 2.5rem;
+      max-width: 40%;
+      row-gap: 2.5rem;
+      column-gap: 3rem;
+      justify-content: center;
+    }
+    @media only screen and (max-width: 600px) {
+      display: none;
+      max-width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  &__logo {
+    svg {
+      width: 6rem;
+      height: 6rem;
+      fill: var(--c-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      // @media only screen and (max-width: 600px) {
+      //   height: 4rem;
+      //   width: 4rem;
+      // }
+    }
+  }
+}

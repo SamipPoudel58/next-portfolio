@@ -1,0 +1,21 @@
+.notFound {
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  &__content > h1,
+  &__text {
+    line-height: 1;
+    font-size: 3rem;
+    color: var(--c-primary);
+    text-align: center;
+  }
+
+  &__content > h1 {
+    font-size: 20rem;
+  }
+}

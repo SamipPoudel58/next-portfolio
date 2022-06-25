@@ -1,0 +1,97 @@
+.blog {
+  padding-top: 4rem;
+  @media only screen and (max-width: 1024px) {
+    padding: 2rem 4rem 0;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 2rem 2rem 0;
+  }
+  // &__wrapper {
+  //   @media only screen and (max-width: 600px) {
+  //     padding: 0 2rem;
+  //   }
+  // }
+  &__heading {
+    font-size: 4.8rem;
+    font-family: "PlayFair Display";
+    color: var(--c-black);
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  &__intro {
+    font-size: 1.8rem;
+    color: var(--c-black-md);
+  }
+
+  &__blogs {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 3rem 0;
+    flex-wrap: wrap;
+    padding: 5rem 0 0;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      // padding: 3rem 0 0;
+      // margin-bottom: 0;
+    }
+
+    a {
+      display: block;
+      width: 48%;
+
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__blog {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 2rem;
+    // margin-bottom: 4rem;
+    // background-color: white;
+    // border: 1px solid #e5e7eb;
+
+    border-radius: 1rem;
+
+    @media only screen and (max-width: 600px) {
+      gap: 0;
+    }
+  }
+
+  &__details {
+    &-title {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-weight: 600;
+      font-size: 2.4rem;
+      color: var(--c-black-dark);
+      transition: color 0.3s;
+      line-height: 1.4;
+      word-wrap: break-word;
+      @media only screen and (max-width: 600px) {
+        font-size: 2rem;
+      }
+    }
+    &-date {
+      font-size: 1.4rem;
+      color: var(--c-black-md);
+      margin-top: 1rem;
+      // @media only screen and (max-width: 600px) {
+      //   text-align: center;
+      // }
+    }
+  }
+
+  &__cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.8rem;
+  }
+}

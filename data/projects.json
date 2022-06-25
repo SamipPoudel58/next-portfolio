@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Samiptter",
+    "description": "An advanced social media site",
+    "image": "/images/project1.webp",
+    "stacks": ["React", "Redux", "Node.js", "MongoDB"],
+    "link": "https://samiptter.herokuapp.com",
+    "github": "/blog/samiptter"
+  },
+  {
+    "id": 2,
+    "title": "Shopmip",
+    "description": "A complete ecommerce site",
+    "image": "/images/project2.webp",
+    "stacks": ["Node.js", "Express", "MongoDB", "EJS"],
+    "link": "https://shopmip.herokuapp.com",
+    "github": "https://github.com/SamipPoudel58/shopmip"
+  },
+  {
+    "id": 3,
+    "title": "The Hungry Words",
+    "description": "Product Showcase and Management Website",
+    "image": "/images/project3.webp",
+    "stacks": ["React", "Redux", "Node.js", "MongoDB"],
+    "link": "https://thehungrywords.herokuapp.com",
+    "github": "https://github.com/SamipPoudel58"
+  },
+  {
+    "id": 4,
+    "title": "Weather App",
+    "description": "Know weather of your or any other city",
+    "image": "/images/project4.webp",
+    "stacks": ["HTML", "CSS", "JavaScript", "API"],
+    "link": "https://wayther.netlify.app/",
+    "github": "https://github.com/SamipPoudel58/weatherApp"
+  },
+  {
+    "id": 5,
+    "title": "Calculator",
+    "description": "Modern calculator with dark mode",
+    "image": "/images/project5.webp",
+    "stacks": ["HTML", "CSS", "JavaScript"],
+    "link": "https://calcoo.netlify.app",
+    "github": "https://github.com/SamipPoudel58/calc"
+  }
+]

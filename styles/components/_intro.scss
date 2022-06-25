@@ -1,0 +1,91 @@
+.intro {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    padding: 0 4rem;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 0 2rem;
+  }
+
+  &__wrapper {
+    height: 100vh;
+    max-height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    @media only screen and (max-width: 800px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__texts {
+    max-width: 50%;
+    @media only screen and (max-width: 1024px) {
+      max-width: 60%;
+    }
+    @media only screen and (max-width: 800px) {
+      max-width: 80%;
+    }
+    @media only screen and (max-width: 800px) {
+      max-width: unset;
+    }
+  }
+
+  &__name {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 6.4rem;
+    background-image: linear-gradient(
+      to right bottom,
+      var(--c-primary-light),
+      var(--c-primary-dark)
+    );
+    background-clip: text;
+    color: transparent;
+    line-height: 1.1;
+
+    @media only screen and (max-width: 800px) {
+      margin-bottom: 1rem;
+      font-size: 4rem;
+      text-align: center;
+    }
+  }
+
+  &__job {
+    font-size: 2rem;
+    line-height: 1.5;
+
+    @media only screen and (max-width: 800px) {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    &-main {
+      color: var(--c-black-dark);
+    }
+  }
+
+  &__image {
+    & img {
+      display: block;
+      width: 100%;
+      border-radius: 50%;
+      max-height: 30rem;
+
+      @media only screen and (max-width: 800px) {
+        height: 15rem;
+      }
+    }
+  }
+}
