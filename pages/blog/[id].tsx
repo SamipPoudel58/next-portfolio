@@ -1,13 +1,23 @@
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import Head from 'next/head';
-import utilStyles from '../../styles/utils.module.css';
 import { MDXRemote } from 'next-mdx-remote';
 import Navigation from '../../components/Navigation';
 import MetaHead from '../../components/MetaHead';
+import Link from 'next/link';
 
 const components = {};
 
-export default function Blog({ postData }) {
+export default function Blog({
+  postData,
+}: {
+  postData: {
+    title: string;
+    description: string;
+    cover: string;
+    publishedDate: string;
+    readingTime: string;
+    mdxSource: { compiledSource: string };
+  };
+}) {
   return (
     <div className="blogTemplate__wrapper">
       <MetaHead
@@ -59,9 +69,11 @@ export default function Blog({ postData }) {
         </div>
 
         <hr className="blogTemplate__hr" />
-        <a className="backToBlog-link" href="/blog">
-          <span>&larr;</span> Back to the blog
-        </a>
+        <Link href="/blog">
+          <a className="backToBlog-link">
+            <span>&larr;</span> Back to the blog
+          </a>
+        </Link>
       </section>
       {/* <Contact /> */}
       {/* <Footer /> */}
@@ -77,7 +89,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { id: string } }) {
   const postData = await getPostData(params.id);
   return {
     props: {

@@ -1,6 +1,4 @@
 import type { GetStaticProps, NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -10,8 +8,13 @@ import Project from '../components/Project';
 import Skills from '../components/Skills';
 import projectsData from '../data/projects.json';
 import { getSortedPostsData } from '../lib/posts';
+import { Post } from '../types/post';
 
-const Home: NextPage = ({ allPostsData }) => {
+const Home: NextPage<{ allPostsData: Post[] }> = ({
+  allPostsData,
+}: {
+  allPostsData: Post[];
+}) => {
   return (
     <div>
       <MetaHead />
@@ -70,51 +73,36 @@ const Home: NextPage = ({ allPostsData }) => {
         <div className="blog__blogs">
           {[...allPostsData]
             .sort((a, b) => (a.order > b.order ? 1 : -1))
-            .map(
-              (
-                edge: {
-                  id: string;
-                  isBlog: boolean;
-                  slug: string;
-                  title: string;
-                  cover: string;
-                  publishedDate: string;
-                  readingTime: string;
-                },
-                index: number
-              ) => {
-                if (edge.isBlog && index < 2) {
-                  return (
-                    <Link
-                      key={index}
-                      href={`/blog/${edge.id}`}
-                      // href={`/blog/${edge.id}`}
-                      aria-label={`read article by Samip Poudel on the topic '${edge.title}'`}
-                    >
-                      <a>
-                        <div className="blog__blog">
-                          <div className="blog__details">
-                            <p className="blog__details-date">
-                              {edge.publishedDate} . {edge.readingTime}
-                            </p>
-                            <h3 className="blog__details-title">
-                              {edge.title}
-                            </h3>
-                          </div>
-                          <img
-                            className="blog__cover"
-                            src={edge.cover}
-                            alt="coverPhoto"
-                          />
+            .map((edge: Post, index: number) => {
+              if (edge.isBlog && index < 2) {
+                return (
+                  <Link
+                    key={index}
+                    href={`/blog/${edge.slug}`}
+                    // href={`/blog/${edge.id}`}
+                    aria-label={`read article by Samip Poudel on the topic '${edge.title}'`}
+                  >
+                    <a>
+                      <div className="blog__blog">
+                        <div className="blog__details">
+                          <p className="blog__details-date">
+                            {edge.publishedDate} . {edge.readingTime}
+                          </p>
+                          <h3 className="blog__details-title">{edge.title}</h3>
                         </div>
-                      </a>
-                    </Link>
-                  );
-                } else {
-                  return null;
-                }
+                        <img
+                          className="blog__cover"
+                          src={edge.cover}
+                          alt="coverPhoto"
+                        />
+                      </div>
+                    </a>
+                  </Link>
+                );
+              } else {
+                return null;
               }
-            )}
+            })}
         </div>
         <div className="projects__allProjects">
           <Link aria-label="see more articles by Samip Poudel" href="/blog">

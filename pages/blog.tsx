@@ -5,8 +5,13 @@ import Footer from '../components/Footer';
 import MetaHead from '../components/MetaHead';
 import Navigation from '../components/Navigation';
 import { getSortedPostsData } from '../lib/posts';
+import { Post } from '../types/post';
 
-const Blog: NextPage = ({ allPostsData }) => (
+const Blog: NextPage<{ allPostsData: Post[] }> = ({
+  allPostsData,
+}: {
+  allPostsData: Post[];
+}) => (
   <div className="blog__wrapper">
     <MetaHead
       title="Blogs | Samip Poudel"
