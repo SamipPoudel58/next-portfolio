@@ -51,12 +51,12 @@ const Navigation = () => {
             </li>
 
             <li>
-              <Link href="/uses">
+              <Link href="/blog/uses">
                 <a className="navigation__navlink">Uses</a>
               </Link>
             </li>
             <li>
-              <Link href="/uses">
+              <Link href="/#contacts">
                 <a className="navigation__navlink">Contacts</a>
               </Link>
             </li>
@@ -82,7 +82,7 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Link href="/uses">
+              <Link href="/blog/uses">
                 <a className="navigation__hiddenNav__navlink">Uses</a>
               </Link>
             </li>

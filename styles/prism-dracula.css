@@ -4,11 +4,11 @@
  * @author Joe Gibson (@gibsjose)
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   color: #ffffff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: "Fira Code", Consolas, Inconsolata, Monaco, "Courier New",
+  font-family: 'Fira Code', Consolas, Inconsolata, Monaco, 'Courier New',
     Courier, monospace;
   font-size: 14px;
   direction: ltr;
@@ -29,26 +29,28 @@ pre[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1.6rem;
   margin: 0.5em 0;
   overflow: auto;
   border-radius: 0.3em;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
   background: #1f2937;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code {
   padding: 0.4rem;
   border-radius: 0.3em;
   background: #f0efed;
   color: var(--c-primary-dark);
   text-shadow: none;
   font-size: 1.6rem;
+  font-family: 'Fira Code', Consolas, Inconsolata, Monaco, 'Courier New',
+    Courier, monospace;
 }
 
 .token.comment,
@@ -75,7 +77,7 @@ pre[class*="language-"] {
 
 .token.class-name {
   color: #ffffb6;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .token.constant {
@@ -128,6 +130,11 @@ pre[class*="language-"] {
 
 .token.attr-value {
   color: rgba(190, 242, 100, 1);
+}
+
+.token.console {
+  text-decoration: none;
+  color: #fff;
 }
 
 .token.function {

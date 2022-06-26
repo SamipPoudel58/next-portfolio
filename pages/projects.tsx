@@ -1,12 +1,19 @@
 import { NextPage } from 'next';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import MetaHead from '../components/MetaHead';
 import Navigation from '../components/Navigation';
 import Project from '../components/Project';
 import data from '../data/projects.json';
 
 const Projects: NextPage = () => (
   <div>
+    <MetaHead
+      title="Projects | Samip Poudel"
+      ogtitle="Projects made by Samip Poudel"
+      description="These are some of the projects that I have built over the years. These project reflect my passion in software and design. My most used tools are Javascript, React, Node and MongoDB."
+      url="https://www.samippoudel.com.np/projects"
+    />
     <Navigation />
     <div className="py-3"></div>
 

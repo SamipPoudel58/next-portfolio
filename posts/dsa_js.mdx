@@ -1,0 +1,691 @@
+---
+title: 'DSA in JavaScript'
+isBlog: false
+slug: 'dsa_js'
+cover: 'https://miro.medium.com/max/1400/1*GdCKWdjHLUGhkPoXjI6vIQ.jpeg'
+publishedDate: 'January 15th, 2022'
+order: 5
+---
+
+## Binary Search
+
+```js
+// Original Solution
+function binarySearch(arr, elem) {
+  var start = 0;
+  var end = arr.length - 1;
+  var middle = Math.floor((start + end) / 2);
+  while (arr[middle] !== elem && start <= end) {
+    if (elem < arr[middle]) {
+      end = middle - 1;
+    } else {
+      start = middle + 1;
+    }
+    middle = Math.floor((start + end) / 2);
+  }
+  if (arr[middle] === elem) {
+    return middle;
+  }
+  return -1;
+}
+
+// Refactored Version
+function binarySearch(arr, elem) {
+  var start = 0;
+  var end = arr.length - 1;
+  var middle = Math.floor((start + end) / 2);
+  while (arr[middle] !== elem && start <= end) {
+    if (elem < arr[middle]) end = middle - 1;
+    else start = middle + 1;
+    middle = Math.floor((start + end) / 2);
+  }
+  return arr[middle] === elem ? middle : -1;
+}
+
+binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 103);
+```
+
+---
+
+## Sorting
+
+```js
+function bubbleSort(arr) {
+  var noSwaps;
+  for (var i = arr.length; i > 0; i--) {
+    noSwaps = true;
+    for (var j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        var temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        noSwaps = false;
+      }
+    }
+    if (noSwaps) break;
+  }
+  return arr;
+}
+// bubbleSort([8,1,2,3,4,5,6,7]);
+
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let lowest = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[lowest]) {
+        lowest = j;
+      }
+    }
+
+    if (i !== lowest) {
+      let temp = arr[i];
+      arr[i] = arr[lowest];
+      arr[lowest] = temp;
+    }
+  }
+  return arr;
+}
+
+// console.log(selectionSort([4,3,1,2,5]));
+
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let currentVal = arr[i];
+    for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+      arr[j + 1] = arr[j];
+    }
+    arr[j + 1] = currentVal;
+  }
+  return arr;
+}
+
+console.log(insertionSort([2, 1, 9, 76, 4]));
+```
+
+---
+
+## Singly Linked List
+
+```js
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+let first = new Node('Hi');
+
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  push(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  pop() {
+    if (!this.head) {
+      return undefined;
+    }
+    let current = this.head;
+    let newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return currentHead;
+  }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (!this.head) return undefined;
+
+    let current = this.head;
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+
+    return current;
+  }
+
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+
+  insert(index, val) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+
+    let newNode = new Node(val);
+    let prev = this.get(index - 1);
+    let temp = pre.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === this.length - 1) return !!this.pop();
+    if (index === 0) return !!this.shift();
+
+    let prev = this.get(index - 1);
+    let removed = prev.next;
+    prev.next = removed.next;
+    this.length--;
+    return removed;
+  }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+
+  // You don't need these
+  print() {
+    var arr = [];
+    var current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
+
+  traverse() {
+    let current = this.head;
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
+  }
+}
+
+// Big O
+
+// Insertion - O(1)
+// Removal - O(1) or O(N) (depends)
+// Searching - O(N)
+// Access - O(N)
+
+let list = new SinglyLinkedList();
+list.push('hello');
+list.push('goodbye');
+list.push('gone');
+list.push('girl');
+list.push('club');
+list.print();
+// console.log(list.get(2));
+
+// console.log(list)
+```
+
+---
+
+## Doubly Linked List
+
+```js
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+    this.prev = null;
+  }
+}
+
+class DoublyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  push(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  pop() {
+    if (!this.head) return undefined;
+    const poppedNode = this.tail;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = poppedNode.prev;
+      this.tail.next = null;
+      poppedNode.prev = null;
+    }
+    this.length--;
+    return poppedNode;
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+    const shiftedNode = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = shiftedNode.next;
+      this.head.prev = null;
+      shiftedNode.next = null;
+    }
+    this.length--;
+    return shiftedNode;
+  }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (!this.head) return undefined;
+
+    if (index <= Math.floor(this.length / 2)) {
+      let current = this.head;
+      for (let i = 0; i !== index; i++) {
+        current = current.next;
+      }
+      return current;
+    } else {
+      let current = this.tail;
+      for (let i = this.length - 1; i !== index; i--) {
+        current = current.prev;
+      }
+      return current;
+    }
+  }
+
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+
+  insert(index, val) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return !!this.unshift(val);
+    if (index === this.length) return !!this.push(val);
+
+    let prevNode = this.get(index - 1);
+    const newNode = new Node(val);
+
+    newNode.prev = prevNode;
+    newNode.next = prevNode.next;
+    prevNode.next = newNode;
+    this.length++;
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return !!this.shift();
+    if (index === this.length) return !!this.pop();
+
+    const removedNode = this.get(index);
+
+    removedNode.prev.next = removedNode.next;
+    removedNode.next.prev = removedNode.prev;
+
+    removedNode.next = null;
+    removedNode.prev = null;
+
+    this.length--;
+    return removedNode;
+  }
+}
+
+// Big O
+
+// Insertion - O(1)
+// Removal - O(1)
+// Searching - O(N) Technically searching is N/2 but its still O(N)
+// Access - O(N)
+
+let list = new DoublyLinkedList();
+list.push('Hello');
+list.push('Peter');
+list.push('Doctor');
+list.push('Otto');
+console.log(list);
+```
+
+---
+
+## Stacks
+
+```js
+// Stack follows LIFO (Last in first out) structure
+
+// Big O
+// Insertion - O(1)
+// Removal - O(1)
+
+// Note: We don't generally search or access
+// Searching - O(N)
+// Access - O(N)
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+class Stack {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+
+  push(val) {
+    let newNode = new Node(val);
+    if (this.size === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      newNode.next = this.first;
+      this.first = newNode;
+    }
+    return ++this.size;
+  }
+
+  pop() {
+    if (this.size === 0) return undefined;
+    const foundNode = this.first;
+    if (this.size === 1) {
+      this.last = null;
+    }
+    this.first = foundNode.next;
+    this.length--;
+    return foundNode.value;
+  }
+}
+
+let stack = new Stack();
+```
+
+---
+
+## Queues
+
+```js
+// Queue follows FIFO (First in first out) structure
+// Big O
+// Insertion - O(1)
+// Removal - O(1)
+
+// Note: We don't generally search or access
+// Searching - O(N)
+// Access - O(N)
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+
+  enqueue(val) {
+    let newNode = new Node(val);
+    if (this.size === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      this.last.next = newNode;
+      this.last = newNode;
+    }
+
+    return ++this.size;
+  }
+
+  dequeue() {
+    if (this.size === 0) return null;
+    let poppedNode = this.first;
+    if (this.size === 1) {
+      this.last = null;
+    }
+    this.first = this.first.next;
+    poppedNode.next = null;
+    this.length--;
+    return poppedNode.value;
+  }
+}
+```
+
+---
+
+# Binary Search Tree
+
+```js
+// Terminology
+
+// Root - Top node of the tree
+// Child - A node directly connected to another node
+// Parent - The converse notion of Child
+// Siblings - A group of nodes with the same parent
+// Edge - The connection between one node and another
+
+// Big O of Binary Search Tree
+// Insertion - O(log n)
+// Searching - O(log n)
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(val) {
+    const newNode = new Node(val);
+    if (!this.root) {
+      this.root = newNode;
+      return this;
+    } else {
+      let current = this.root;
+      while (true) {
+        if (val === current.value) return undefined;
+        if (val < current.value) {
+          if (current.left === null) {
+            current.left = newNode;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (val > current.value) {
+          if (current.right === null) {
+            current.right = newNode;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+
+  find(val) {
+    if (this.root === null) return undefined;
+    if (this.root.value === val) {
+      return true;
+    }
+    let current = this.root,
+      found = false;
+    while (current && !found) {
+      if (val < current.value) {
+        current = current.left;
+      } else if (val > current.value) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return false;
+    return current;
+  }
+
+  // TREE TRAVERSAL
+  // Breadth First Search
+
+  BFS() {
+    let node = this.root,
+      data = [],
+      queue = [];
+
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
+
+  DFSPreOrder() {
+    let data = [];
+    function traverse(node) {
+      data.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+
+  DFSPostOrder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    }
+
+    traverse(this.root);
+    return data;
+  }
+
+  DFSInOrder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+    return data;
+  }
+}
+
+// BFS vs DFS
+
+// For Time Complexity both are similar
+
+// For Space Complexity
+
+// If the tree is wide, then DFS is better
+// If the tree is deep, then BFS is beter
+
+let tree = new BinarySearchTree();
+```
