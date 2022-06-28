@@ -14,7 +14,10 @@ body {
   --c-text-gray: #5a5a5a;
   --c-gray-light: #dcdcdc;
   --c-off-white: #f9fafb;
-  --c-blockquote: #f7f7f7;
+  
+  --c-blockquote: #e5e7eb;
+  --c-code: #1f2937;
+  --c-code-title: #2c394c;
 
   --c-black: #000000;
   --c-black-dark: #222222;
@@ -26,6 +29,8 @@ body.dark {
   --c-gray-light: #222222;
 
   --c-blockquote: #222222;
+  --c-code: #222222;
+  --c-code-title: #2e2d2d;
 
   --c-black: #ffffff;
   --c-black-dark: #eaeaea;
@@ -48,7 +53,7 @@ body.dark {
 
 *::-webkit-scrollbar {
   width: 10px;
-  height: 10px;
+  height: 6px;
   background-color: var(--c-gray-light);
 }
 

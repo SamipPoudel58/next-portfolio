@@ -148,6 +148,14 @@
       color: var(--c-black-dark);
       padding-bottom: 1.5rem;
       font-weight: 700;
+      position: relative;
+    }
+
+    h2:hover .blog__anchor {
+      opacity: 1;
+    }
+    h3:hover .blog__anchor {
+      opacity: 1;
     }
 
     h2 {
@@ -195,9 +203,10 @@
     blockquote {
       border-left: 3px solid var(--c-primary);
       padding: 1.5rem 1rem 1.5rem 2rem;
-      background-color: var(--c-blockquote);
+      background-color: rgba(59,130,246,0.1);
       // font-style: italic;
       margin: 2rem 0;
+      border-radius: 0.5rem;
 
       @media only screen and (max-width: 600px) {
         padding: 1rem 1.5rem;
@@ -225,6 +234,7 @@
       color: var(--c-primary-dark);
       text-shadow: none;
       font-size: 1.6rem;
+      font-weight: bold;
       word-wrap: break-word;
 
       &::selection {
@@ -251,7 +261,7 @@
     /* Code blocks */
     pre[class*="language-"] {
       padding: 1.6rem;
-      background: #1f2937;
+      background: var(--c-code);
     }
 
     .token.comment,
@@ -302,4 +312,44 @@
     height: 4rem;
     width: 4rem;
   }
+}
+
+.rehype-code-title {
+  margin-top: 2rem;
+  margin-bottom: -2.5rem;
+  background-color: var(--c-code-title);
+  color: #9ca3af;
+  padding: 1rem 1rem 1.5rem 1rem;
+  border-radius: 0.3em 0.3em 0 0;
+  line-height: 1;
+  font-size: 1.4rem;
+
+}
+
+.rehype-code-title::before{
+  content:"#";
+  color: white;
+  display: inline-block;
+  padding: 0 .5rem;
+  line-height: 1;
+  font-size: 1.8rem;
+}
+
+.blog__anchor {
+  display: block;
+  position: absolute;
+  left: -2.6rem;
+  opacity: 0;
+
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.blog__anchor::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='dodgerblue'%3E%3Cpath fill-rule='evenodd' d='M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z' clip-rule='evenodd' /%3E%3C/svg%3E");
+  display: block;
+  color: greenyellow;
+  width: 25px;
+  height: 25px;
 }

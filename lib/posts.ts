@@ -1,11 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-// import remark from 'remark';
-// import html from 'remark-html';
 import { serialize } from 'next-mdx-remote/serialize';
 import readingTime from 'reading-time';
-import rehypePrism from '@mapbox/rehype-prism';
+import remarkGfm from 'remark-gfm';
+import { Post } from '../types/post';
+import mdxPrism from 'mdx-prism';
+import rehypeCodeTitles from 'rehype-code-titles';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -27,13 +30,13 @@ export function getSortedPostsData() {
 
     // Combine the data with the id
     return {
+      ...(matterResult.data as Post),
       id,
       readingTime: text,
-      ...matterResult.data,
     };
   });
   // Sort posts by date
-  return allPostsData.sort(({ date: a }, { date: b }) => {
+  return allPostsData.sort(({ order: a }, { order: b }) => {
     if (a < b) {
       return 1;
     } else if (a > b) {
@@ -69,7 +72,7 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
@@ -78,22 +81,27 @@ export async function getPostData(id) {
 
   const { text } = readingTime(fileContents);
 
-  // Use remark to convert markdown into HTML string
-  // const processedContent = await remark()
-  //   .use(html)
-  //   .use(require('remark-prism'))
-  //   .process(matterResult.content);
-  // const contentHtml = processedContent.toString();
-
   const mdxSource = await serialize(matterResult.content, {
-    mdxOptions: { rehypePlugins: [rehypePrism] },
+    mdxOptions: {
+      remarkPlugins: [remarkGfm], //remarkGfm allows us to use tables and checkboxes like github
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: { className: ['blog__anchor'] },
+          },
+        ],
+        rehypeCodeTitles,
+        mdxPrism,
+      ],
+    },
   });
 
   // Combine the data with the id and contentHtml
   return {
     id,
     readingTime: text,
-    // contentHtml,
     mdxSource,
     ...matterResult.data,
   };

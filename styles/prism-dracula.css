@@ -43,12 +43,13 @@ pre[class*='language-'] {
 
 /* Inline code */
 :not(pre) > code {
-  padding: 0.4rem;
-  border-radius: 0.3em;
-  background: #f0efed;
-  color: var(--c-primary-dark);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  background: var(--c-blockquote);
+  color: var(--c-primary);
   text-shadow: none;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  line-height: 1;
   font-family: 'Fira Code', Consolas, Inconsolata, Monaco, 'Courier New',
     Courier, monospace;
 }

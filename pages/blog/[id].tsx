@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import Navigation from '../../components/Navigation';
 import MetaHead from '../../components/MetaHead';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 const components = {};
 
@@ -18,6 +19,27 @@ export default function Blog({
     mdxSource: { compiledSource: string };
   };
 }) {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      const myFunction = () => {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        if (document.getElementById('myBar')) {
+          (document.getElementById('myBar') as any).style.width =
+            scrolled + '%';
+        }
+      };
+    }
+  }, []);
+
   return (
     <div className="blogTemplate__wrapper">
       <MetaHead
@@ -51,7 +73,7 @@ export default function Blog({
           </svg>
         </div>
       </a>
-      <div className="py-3"></div>
+      <div className="py-2"></div>
       <section className="blogTemplate limit-width-blog">
         <img
           id="blogTemplate__cover"
