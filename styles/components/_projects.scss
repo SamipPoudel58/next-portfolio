@@ -52,7 +52,7 @@
   &__title {
     font-family: "IBM Plex Sans";
     font-size: 3.6rem;
-    font-weight: medium;
+    font-weight: 700;
     letter-spacing: 0;
     line-height: 1;
     color: var(--c-black-dark);
@@ -163,7 +163,6 @@
     }
 
     a {
-      display: block;
       display: flex;
       align-items: center;
       gap: 1rem;

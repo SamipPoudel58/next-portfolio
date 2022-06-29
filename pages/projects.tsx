@@ -15,11 +15,11 @@ const Projects: NextPage = () => (
       url="https://www.samippoudel.com.np/projects"
     />
     <Navigation />
-    <div className="py-3"></div>
+    <div className="py-12"></div>
 
     <section className="projects limit-width-lg ">
       <h2 className="heading-lg text-left">Projects</h2>
-      <p className="paragraph mb-2">
+      <p className="paragraph mb-16">
         These are some of the projects that I have built over the years that
         reflect my passion in software and design.
       </p>

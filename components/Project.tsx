@@ -40,7 +40,7 @@ const Project = ({
   }, []);
 
   return (
-    <div className="projects__project py-3">
+    <div className="projects__project py-12">
       <div>
         <img
           className="projects__image"

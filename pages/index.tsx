@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import Contact from '../components/Contact';
+import Counter from '../components/Counter';
 import Footer from '../components/Footer';
 import Intro from '../components/Intro';
 import MetaHead from '../components/MetaHead';
@@ -23,7 +24,7 @@ const Home: NextPage<{ allPostsData: Post[] }> = ({
 
       <section className="projects limit-width-lg">
         <h2 className="text-left heading-lg">Projects</h2>
-        <p className="paragraph mb-3">
+        <p className="paragraph mb-12">
           These are some of the projects that I have built over the years that
           reflect my passion in software and design.
         </p>
@@ -50,7 +51,6 @@ const Home: NextPage<{ allPostsData: Post[] }> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="h-6 w-6 ml-1"
               >
                 <path
                   stroke="currentColor"
@@ -112,7 +112,6 @@ const Home: NextPage<{ allPostsData: Post[] }> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="h-6 w-6 ml-1"
               >
                 <path
                   stroke="currentColor"
@@ -125,8 +124,7 @@ const Home: NextPage<{ allPostsData: Post[] }> = ({
             </a>
           </Link>
         </div>
-        <div className="py-3"></div>
-        <div className="py-2"></div>
+        <div className="py-20"></div>
       </section>
 
       <Skills />

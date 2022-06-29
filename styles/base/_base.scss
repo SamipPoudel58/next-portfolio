@@ -81,7 +81,7 @@ body {
   color: var(--c-black-md);
 
   font-family: "Karla", "Roboto", sans-serif;
-  line-height: 1.7;
+  line-height: 1.7 !important;
 }
 
 ::selection {
@@ -93,4 +93,8 @@ a,
 a:active,
 a:hover {
   text-decoration: none;
+}
+
+ul {
+  list-style: disc;
 }

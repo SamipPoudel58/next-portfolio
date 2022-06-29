@@ -11,7 +11,6 @@
   &__cover {
     width: 100%;
     border-radius: 0.8rem;
-
     @media only screen and (max-width: 600px) {
       border-radius: 0.5rem;
     }
@@ -21,6 +20,7 @@
     margin-top: 3rem;
     font-size: 3.6rem;
     font-family: "IBM Plex Sans";
+    font-weight: 700;
     line-height: 1.4;
     color: var(--c-black);
     @media only screen and (max-width: 600px) {
@@ -62,7 +62,7 @@
 
     img {
       width: 100%;
-      border-radius: 0.8rem;
+      border-radius: 0.5rem;
       display: block;
       margin: 3rem 0;
       box-shadow: 4px 4px 24px rgba(143, 142, 142, 0.1);
@@ -77,6 +77,10 @@
       @media only screen and (max-width: 600px) {
         font-size: 1.4rem;
       }
+    }
+
+    ul {
+      list-style: disc;
     }
 
     ul,
@@ -234,7 +238,6 @@
       color: var(--c-primary-dark);
       text-shadow: none;
       font-size: 1.6rem;
-      font-weight: bold;
       word-wrap: break-word;
 
       &::selection {
@@ -322,7 +325,7 @@
   padding: 1rem 1rem 1.5rem 1rem;
   border-radius: 0.3em 0.3em 0 0;
   line-height: 1;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 
 }
 

@@ -20,7 +20,7 @@ const Blog: NextPage<{ allPostsData: Post[] }> = ({
       url="https://www.samippoudel.com.np/blog"
     />
     <Navigation />
-    <div className="py-3"></div>
+    <div className="py-12"></div>
     <section className="blog limit-width-lg">
       <h1 className="heading-lg text-left">Blog</h1>
       <p className="paragraph">

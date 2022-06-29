@@ -4,21 +4,12 @@ import Navigation from '../../components/Navigation';
 import MetaHead from '../../components/MetaHead';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { Post } from '../../types/post';
+import Counter from '../../components/Counter';
 
-const components = {};
+const components = { Counter };
 
-export default function Blog({
-  postData,
-}: {
-  postData: {
-    title: string;
-    description: string;
-    cover: string;
-    publishedDate: string;
-    readingTime: string;
-    mdxSource: { compiledSource: string };
-  };
-}) {
+export default function Blog({ postData }: { postData: Post }) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.onscroll = function () {
@@ -59,7 +50,6 @@ export default function Blog({
         <div className="navigateUp">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -73,7 +63,8 @@ export default function Blog({
           </svg>
         </div>
       </a>
-      <div className="py-2"></div>
+      <div className="py-3"></div>
+      <div className="py-3"></div>
       <section className="blogTemplate limit-width-blog">
         <img
           id="blogTemplate__cover"
@@ -97,8 +88,6 @@ export default function Blog({
           </a>
         </Link>
       </section>
-      {/* <Contact /> */}
-      {/* <Footer /> */}
     </div>
   );
 }

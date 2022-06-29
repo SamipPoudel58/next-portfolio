@@ -40,8 +40,6 @@ const MetaHead = ({
       <meta property="twitter:image" content={image} />
       <meta property="twitter:site" content="@samip4sure" />
       <meta property="twitter:creator" content="@samip4sure" />
-
-      <script async src="https://cdn.splitbee.io/sb.js"></script>
     </Head>
   );
 };

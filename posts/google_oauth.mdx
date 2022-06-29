@@ -61,7 +61,7 @@ tsc --init
 
 We will set our root directory to be `./src` and the output directory to be `./dist` ( this is where typescript will output our javascript files ). In your `tsconfig.json` find "outDir" and "rootDir" and comment them out and edit them as
 
-```json
+```json:tsconfig.json
 "outDir": "./dist",
 "rootDir": "./src"
 ```
@@ -69,10 +69,10 @@ We will set our root directory to be `./src` and the output directory to be `./d
 Inside the src folder create a file `app.ts`.
 Now let's add scripts in `package.json`
 
-```json
-   "start": "node dist/app.js",
-   "dev": "nodemon src/app.ts",
-   "build": "tsc -p ."
+```json:package.json
+"start": "node dist/app.js",
+"dev": "nodemon src/app.ts",
+"build": "tsc -p ."
 ```
 
 ---
@@ -85,7 +85,7 @@ We will be using credentials and keys that should be secret from the public. We 
 
 Add these variables and their appropriate values.
 
-```bash
+```bash:.env
 PORT = 3000
 NODE_ENV = development
 MONGO_LOCAL = your_local_db_URI
@@ -96,7 +96,7 @@ These variables can be directly accessed using `process.env.VARIABLE` but I feel
 
 Create a `utils` folder inside `src`. Inside `utils` create a file `secrets.ts` which will look something like this.
 
-```ts
+```ts:src/utils/secrets.ts
 import dotenv from 'dotenv';
 import fs from 'fs';
 
@@ -140,7 +140,7 @@ Now we are ready to create our server.
 
 Let's create a basic express server, connect it to the DB (database). We will also set our `view engine` to be `ejs` so that we can render pages to our client. Your `app.ts` should look as follows:
 
-```ts
+```ts:src/app.ts
 import express from 'express';
 import { MONGO_URL, PORT } from './utils/secrets';
 
@@ -159,7 +159,7 @@ app.listen(PORT, () => {
 
 Now, let's create our homepage. Create a `views` folder in the root, this `views` folder is where our app will look for when it has to render a page. Next, create a `home.ejs` file which you can fill with basic HTML as follows
 
-```ejs
+```ejs:views/home.ejs
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -178,7 +178,7 @@ Now, let's create our homepage. Create a `views` folder in the root, this `views
 
 We want this home page to be rendered when clients visit the `/` route. So let's set up the home route and see if the page is rendered. In `app.ts` add the following route handler.
 
-```ts
+```ts:src/app.ts
 app.get('/', (req, res) => {
   res.render('home');
 });
@@ -188,7 +188,7 @@ If you go to `http://localhost:3000` you should be able to view the homepage. Ya
 
 Next up, to set up our authentication routes let's create a folder `routes` inside the `src` folder and add a file `authRoutes.ts`
 
-```ts
+```ts:src/routes/authRoutes.ts
 import express from 'express';
 const router = express.Router();
 
@@ -202,7 +202,7 @@ export default router;
 
 Import this route in `app.ts` and use it as follows:
 
-```ts
+```ts:src/app.ts
 import authRoutes from './routes/authRoutes';
 
 app.use('/auth', authRoutes);
@@ -211,7 +211,7 @@ app.use('/auth', authRoutes);
 This will render a login page when someone visits the route `/auth/login` as all the routes in `authRoutes.ts` will be prefixed with `/auth`.
 So, let's create a `login.ejs` file inside the views folder.
 
-```ejs
+```ejs:views/login.ejs
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -289,7 +289,7 @@ Passport is an authentication middleware that will handle most of the complexity
 
 First, create a `config` folder inside `src` and create a `passport.ts` inside it which should look as follows:
 
-```ts
+```ts:src/config/passport.ts
 import passport from 'passport';
 import passportGoogle from 'passport-google-oauth20';
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '../utils/secrets';
@@ -312,13 +312,13 @@ passport.use(
 
 Now import the `passport.ts` in your `app.ts`;
 
-```ts
+```ts:src/app.ts
 import './config/passport';
 ```
 
 In `login.ejs`, you can see we had an anchor tag that links to the route `/auth/google`, we will use this route to redirect users to the Google consent screen. So let's set up that route in `authRoutes.ts`. Add these following lines
 
-```ts
+```ts:src/routes/authRoutes.ts
 import passport from 'passport';
 
 router.get(
@@ -338,7 +338,7 @@ This is because, after we login with google, it redirects us to this callback ro
 
 In the same `authRoutes.ts` file just below `/google` route handler, create a handler for `/google/redirect` as
 
-```ts
+```ts:src/routes/authRoutes.ts
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
   res.send('This is the callback route');
 });
@@ -352,7 +352,7 @@ This will get rid of the error but you might have noticed the consent screen is 
 
 Now, we need to set up our database to store the user data. Let's build the user model. Create a folder "models" inside the src folder and inside it create a `User.ts` file where we can define the schema as:
 
-```ts
+```ts:src/models/User.ts
 import mongoose, { Document } from 'mongoose';
 
 const Schema = mongoose.Schema;
@@ -377,7 +377,7 @@ export default User;
 As you can see we will only store the username, email, and googleId which will help us to identify users. We are also exporting a type "UserDocument".
 Now let's complete our callback function in `passport.ts`
 
-```ts
+```ts:src/config/passport.ts
 passport.use(
   new GoogleStrategy(
     {
@@ -422,7 +422,7 @@ This callback function also receives a profile as you can see. Using the google 
 
 Passport has a `serializeUser` method which receives user data from the passport callback function i.e from `done(null, user)` and stores it in a cookie, (when done function is called). Here we are storing only `user.id` which will help us identify the user. Let's add this method in `passport.ts`
 
-```ts
+```ts:src/config/passport.ts
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
@@ -430,7 +430,7 @@ passport.serializeUser((user, done) => {
 
 Passport has a `deserializeUser` method that reads the cookie and gets the stored user id, here we use that Id to find the user in our database and after we call done function it attached that user data into our request, which can be accessed through `req.user`. Let's add this method in `passport.ts`
 
-```ts
+```ts:src/config/passport.ts
 passport.deserializeUser(async (id, done) => {
   const user = await User.findById(id);
   done(null, user);
@@ -448,10 +448,10 @@ In VS Code you can press Ctrl and click on the package name from any of the impo
 node_modules > @types > passport > index.d.ts
 ```
 
-You should see something like this
+You should see something like this.
 Note: This is just a small portion of the code
 
-```ts
+```ts:node_modules/@types/passport/index.d.ts
 declare global {
   namespace Express {
     // tslint:disable-next-line:no-empty-interface
@@ -472,7 +472,7 @@ As you can see, this type definition file overrides the interface of Request and
 So to solve this, create a `typings` folder inside `src` folder. Inside the `typings` folder create an `express` folder and inside it create a file `index.d.ts`. This is where we will override the type of User.
 Your index.d.ts should look something like this
 
-```ts
+```ts:src/typings/express/index.d.ts
 import { UserDocument } from '../../models/User';
 
 declare global {
@@ -485,7 +485,7 @@ declare global {
 Here we are setting the `User` interface to extend `UserDocument` interface which we created in the `UserModel.ts`.
 Now go to your `tsconfig.json` file and add typeRoots value as
 
-```json
+```json:tsconfig.json
 "typeRoots": [
       "./src/typings",
       "./node_modules/@types"
@@ -498,9 +498,9 @@ Now the error should be fixed, so let's move on.
 
 ## Setting up cookies
 
-To store session data in a cookie, we will use the package "cookie-session" and also initialize passport to use sessions. We can do that using the following code:
+To store session data in a cookie, we will use the package "cookie-session" and also initialize passport to use sessions in `app.ts`. We can do that using the following code:
 
-```ts
+```ts:src/app.ts
 import cookieSession from 'cookie-session';
 import passport from 'passport';
 import { COOKIE_KEY } from './utils/secrets';
@@ -527,13 +527,13 @@ COOKIE_KEY = any_long_and_random_string
 
 And then, In your `secrets.ts` add this line:
 
-```ts
+```ts:src/utils/secrets.ts
 export const COOKIE_KEY = process.env.COOKIE_KEY as string;
 ```
 
 That was a lot, wasn't it? Just to check if you got everything correctly setup, your `app.ts` should look something like this:
 
-```ts
+```ts:src/app.ts
 import express from 'express';
 import mongoose from 'mongoose';
 import { COOKIE_KEY, MONGO_URI, PORT } from './utils/secrets';
@@ -581,7 +581,7 @@ Instead of just giving a message let's redirect the user to something meaningful
 
 So, in `authRoutes.ts`, navigate to `/google/redirect` route and change the controller function as:
 
-```ts
+```ts:src/routes/authRoutes.ts
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
   res.redirect('/profile');
 });
@@ -589,7 +589,7 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
 
 Now as the user signs in, they will be redirected to the `/profile` route, but we have not created it yet. So, let's create a `profileRoutes.ts` file in your `src/routes` folder.
 
-```ts
+```ts:src/routes/profileRoutes.ts
 import express from 'express';
 const router = express.Router();
 
@@ -600,11 +600,11 @@ router.get('/', (req, res) => {
 export default router;
 ```
 
-Here we are rendering a profile page (i.e `profile.ejs` which we have not created yet) and passing in an object that contains the user's data, which we can use in our markup in `profile.ejs`
+Here we are rendering a profile page (i.e `profile.ejs` which we have not created yet) and passing in an object that contains the user's data, which we can use in our markup in `profile.ejs`.
 
 So, now create a `profile.ejs` file in the `views` folder. Ejs helps us embed javascript in our markup, so we can use the user data that we passed and render it to the browser.
 
-```ejs
+```ejs:views/profile.ejs
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -626,9 +626,9 @@ So, now create a `profile.ejs` file in the `views` folder. Ejs helps us embed ja
 </html>
 ```
 
-Now, to use this route in our app, we need to import it in our app.ts and use it as
+Now, to use this route in our app, we need to import it in our `app.ts` and use it as
 
-```ts
+```ts:src/app.ts
 import profileRoutes from './routes/profileRoutes';
 
 app.use('/profile', profileRoutes);
@@ -638,7 +638,7 @@ The next problem we need to tackle is that anyone can access the `/profile` rout
 
 So to handle this let's create a middleware function, in your `profileRoutes.ts` create a function "checkAuth".
 
-```ts
+```ts:src/routes/profileRoutes.ts
 const checkAuth = (req: Request, res: Response, next: NextFunction) => {
   if (!req.user) {
     res.redirect('/auth/login');
@@ -650,7 +650,7 @@ const checkAuth = (req: Request, res: Response, next: NextFunction) => {
 
 Now let's add this middleware function in our `/profile` route handler that we created previously
 
-```ts
+```ts:src/routes/profileRoutes.ts
 router.get('/', checkAuth, (req, res) => {
   res.render('profile', { user: req.user });
 });
@@ -658,7 +658,7 @@ router.get('/', checkAuth, (req, res) => {
 
 Now that we have a login system in place, let's add a way for users to log out. In `authRoutes.ts` add a logout route as
 
-```ts
+```ts:src/routes/authRoutes.ts
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
@@ -675,7 +675,7 @@ Currently, our `/auth/login` route can be accessed even by logged-in users, whic
 
 In `authRoutes.ts`, change the `/login` handler as
 
-```ts
+```ts:src/routes/authRoutes.ts
 router.get('/login', (req, res) => {
   if (req.user) {
     res.redirect('/profile');
@@ -690,7 +690,7 @@ Now, on our homepage too, there is a link to go to the login page even for the l
 
 To do that we have to pass user data to our view, in `app.ts` change the `/` route handler as
 
-```ts
+```ts:src/app.ts
 app.get('/', (req, res) => {
   res.render('home', { user: req.user });
 });
@@ -699,7 +699,7 @@ app.get('/', (req, res) => {
 Now in `home.ejs` file, add an if check to render different anchor tags as per the auth state.
 Here's what the body should look like:
 
-```ejs
+```ejs:views/home.ejs
 <body>
     <h1>This is home</h1>
     <% if (user) { %>
