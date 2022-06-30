@@ -266,9 +266,10 @@
     }
 
     /* Code blocks */
-    pre[class*="language-"] {
+    pre {
       padding: 1rem;
       background: var(--c-code);
+      z-index: 2;
     }
 
     .token.comment,
@@ -294,6 +295,7 @@
   height: 3.125rem;
   width: 3.125rem;
   cursor: pointer;
+  z-index: 10;
 
   & > svg {
     height: 1.875rem;
@@ -323,7 +325,7 @@
 
 .rehype-code-title {
   margin-top: 1.25rem;
-  margin-bottom: -1.5625rem;
+  margin-bottom: -1.45rem;
   background-color: var(--c-code-title);
   color: #9ca3af;
   padding: 0.625rem 0.625rem 0.9375rem 0.625rem;

@@ -3,11 +3,15 @@ import { MDXRemote } from 'next-mdx-remote';
 import Navigation from '../../components/Navigation';
 import MetaHead from '../../components/MetaHead';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Post } from '../../types/post';
 import Counter from '../../components/Counter';
+import CustomPre from '../../components/CustomPre';
 
-const components = { Counter };
+const components = {
+  Counter,
+  pre: CustomPre,
+};
 
 export default function Blog({ postData }: { postData: Post }) {
   useEffect(() => {
