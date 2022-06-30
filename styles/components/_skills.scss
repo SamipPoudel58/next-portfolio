@@ -1,11 +1,11 @@
 .skills {
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
   @media only screen and (max-width: 1024px) {
-    padding: 0 4rem;
+    padding: 0 2.5rem;
   }
   @media only screen and (max-width: 600px) {
-    padding: 0 2rem;
-    margin-bottom: 3rem;
+    padding: 0 1.25rem;
+    margin-bottom: 1.875rem;
   }
 
   &__heading {
@@ -14,7 +14,7 @@
     }
   }
   &__content {
-    padding-top: 3rem;
+    padding-top: 1.875rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -41,16 +41,16 @@
   }
 
   &__category {
-    margin-bottom: 5rem;
+    margin-bottom: 3.125rem;
     &-name {
-      font-size: 2.4rem;
+      font-size: 1.5rem;
       font-weight: 700;
       line-height: 1;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
       color: var(--c-black-dark);
 
       @media only screen and (max-width: 600px) {
-        font-size: 2rem;
+        font-size: 1.25rem;
       }
     }
   }
@@ -61,12 +61,12 @@
     &-left,
     &-right {
       list-style: none;
-      font-size: 1.8rem;
+      font-size: 1.125rem;
       width: 50%;
       color: var(--c-black-md);
 
       @media only screen and (max-width: 600px) {
-        font-size: 1.6rem;
+        font-size: 1rem;
       }
     }
   }
@@ -74,20 +74,20 @@
   &__logos {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 10rem;
-    row-gap: 8rem;
+    column-gap: 6.25rem;
+    row-gap: 5rem;
     max-width: 50%;
-    padding-left: 10rem;
+    padding-left: 6.25rem;
     @media only screen and (max-width: 1024px) {
-      row-gap: 5rem;
-      column-gap: 5rem;
-      padding-left: 5rem;
+      row-gap: 3.125rem;
+      column-gap: 3.125rem;
+      padding-left: 3.125rem;
     }
     @media only screen and (max-width: 800px) {
-      padding-left: 2.5rem;
+      padding-left: 1.5625rem;
       max-width: 40%;
-      row-gap: 2.5rem;
-      column-gap: 3rem;
+      row-gap: 1.5625rem;
+      column-gap: 1.875rem;
       justify-content: center;
     }
     @media only screen and (max-width: 600px) {
@@ -99,8 +99,8 @@
 
   &__logo {
     svg {
-      width: 6rem;
-      height: 6rem;
+      width: 3.75rem;
+      height: 3.75rem;
       fill: var(--c-primary);
       cursor: pointer;
       transition: all 0.2s;

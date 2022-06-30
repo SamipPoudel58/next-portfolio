@@ -1,43 +1,43 @@
 .blogTemplate {
-  margin-top: 5rem;
-  padding-bottom: 6.4rem;
+  margin-top: 3.125rem;
+  padding-bottom: 4rem;
   @media only screen and (max-width: 800px) {
-    padding: 0 1.5rem 6.4rem;
+    padding: 0 0.9375rem 4rem;
   }
   @media only screen and (max-width: 600px) {
-    margin-top: 3rem;
+    margin-top: 1.875rem;
   }
 
   &__cover {
     width: 100%;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     @media only screen and (max-width: 600px) {
-      border-radius: 0.5rem;
+      border-radius: 0.3125rem;
     }
   }
 
   &__title {
-    margin-top: 3rem;
-    font-size: 3.6rem;
+    margin-top: 1.875rem;
+    font-size: 2.25rem;
     font-family: "IBM Plex Sans";
     font-weight: 700;
     line-height: 1.4;
     color: var(--c-black);
     @media only screen and (max-width: 600px) {
-      font-size: 2.8rem;
+      font-size: 1.75rem;
     }
     @media only screen and (max-width: 500px) {
-      margin-top: 2rem;
+      margin-top: 1.25rem;
       // text-align: center;
     }
   }
 
   &__date {
     // margin-top: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     color: var(--c-black-md);
     @media only screen and (max-width: 600px) {
-      font-size: 1.4rem;
+      font-size: 0.875rem;
     }
     @media only screen and (max-width: 500px) {
       // text-align: center;
@@ -46,15 +46,15 @@
 
   &__hr {
     background-color: var(--c-gray-light);
-    margin-bottom: 3rem;
+    margin-bottom: 1.875rem;
     border: none;
     height: 1px;
   }
 
   &__content {
     color: var(--c-black-dark);
-    padding: 3rem 0;
-    font-size: 1.6rem;
+    padding: 1.875rem 0;
+    font-size: 1rem;
     line-height: 1.625;
     // color: var(--c-text-black);
     font-family: "Karla", sans-serif;
@@ -62,9 +62,9 @@
 
     img {
       width: 100%;
-      border-radius: 0.5rem;
+      border-radius: 0.3125rem;
       display: block;
-      margin: 3rem 0;
+      margin: 1.875rem 0;
       box-shadow: 4px 4px 24px rgba(143, 142, 142, 0.1);
       @media only screen and (max-width: 600px) {
         border-radius: 0.5rem;
@@ -72,10 +72,10 @@
     }
 
     p {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      font-size: 1.125rem;
+      margin-bottom: 0.625rem;
       @media only screen and (max-width: 600px) {
-        font-size: 1.4rem;
+        font-size: 0.875rem;
       }
     }
 
@@ -83,36 +83,40 @@
       list-style: disc;
     }
 
+    ol {
+      list-style: decimal;
+    }
+
     ul,
     ol {
-      margin: 2rem 0 2rem 2rem;
+      margin: 1.25rem 0 1.25rem 1.25rem;
     }
 
     h2 + ul {
-      margin: 0 0 2rem 2rem;
+      margin: 0 0 1.25rem 1.25rem;
     }
 
     ul ul {
       list-style-type: disc;
-      margin: 1rem 0 1rem 2rem;
+      margin: 0.625rem 0 0.625rem 1.25rem;
     }
 
     ul.contains-task-list {
       list-style: none;
-      margin: 2rem 0;
+      margin: 1.25rem 0;
     }
 
     li {
-      font-size: 1.8rem;
+      font-size: 1.125rem;
       @media only screen and (max-width: 600px) {
-        font-size: 1.4rem;
+        font-size: 0.875rem;
       }
     }
 
     li.task-list-item {
       & > input {
         position: relative;
-        margin-right: 0.8rem;
+        margin-right: 0.5rem;
 
         &::after {
           content: "";
@@ -150,7 +154,7 @@
     h2 {
       font-family: "IBM Plex Sans", sans-serif;
       color: var(--c-black-dark);
-      padding-bottom: 1.5rem;
+      padding-bottom: 0.9375rem;
       font-weight: 700;
       position: relative;
     }
@@ -163,14 +167,14 @@
     }
 
     h2 {
-      font-size: 2.4rem;
+      font-size: 1.5rem;
     }
 
     h3 {
-      font-size: 2rem;
+      font-size: 1.25rem;
 
       @media only screen and (max-width: 600px) {
-        font-size: 1.8rem;
+        font-size: 1.125rem;
       }
     }
 
@@ -183,61 +187,61 @@
     }
 
     hr {
-      margin: 5rem 0;
+      margin: 3.125rem 0;
       background-color: var(--c-gray-light);
       border: none;
       height: 1px;
       @media only screen and (max-width: 600px) {
-        margin: 3rem 0;
+        margin: 1.875rem 0;
       }
     }
 
     table {
       width: 100%;
       text-align: left;
-      font-size: 1.8rem;
+      font-size: 1.125rem;
       line-height: 1.7;
 
       @media only screen and (max-width: 600px) {
-        font-size: 1.4rem;
+        font-size: 0.875rem;
         line-height: 1.5;
       }
     }
 
     blockquote {
       border-left: 3px solid var(--c-primary);
-      padding: 1.5rem 1rem 1.5rem 2rem;
+      padding: 0.9375rem 0.625rem 0.9375rem 1.25rem;
       background-color: rgba(59,130,246,0.1);
       // font-style: italic;
-      margin: 2rem 0;
-      border-radius: 0.5rem;
+      margin: 1.25rem 0;
+      border-radius: 0.3125rem;
 
       @media only screen and (max-width: 600px) {
-        padding: 1rem 1.5rem;
+        padding: 0.625rem 0.9375rem;
       }
 
       & > p {
-        font-size: 1.8rem;
+        font-size: 1.125rem;
         margin-bottom: 0rem;
         word-wrap: break-word;
         @media only screen and (max-width: 600px) {
-          font-size: 1.4rem;
+          font-size: 0.875rem;
         }
       }
     }
 
     pre[class*="language-"] {
-      margin: 2rem 0;
+      margin: 1.25rem 0;
     }
 
     /* Inline code */
     :not(pre) > code[class*="language-"] {
-      padding: 0.4rem;
+      padding: 0.25rem;
       border-radius: 0.2em;
       background: var(--c-blockquote);
       color: var(--c-primary-dark);
       text-shadow: none;
-      font-size: 1.6rem;
+      font-size: 1rem;
       word-wrap: break-word;
 
       &::selection {
@@ -246,7 +250,7 @@
       }
 
       @media only screen and (max-width: 600px) {
-        font-size: 1.2rem;
+        font-size: 0.75rem;
       }
     }
 
@@ -254,16 +258,16 @@
     pre[class*="language-"] {
       // font-family: "Fira Code", Consolas, Inconsolata, Monaco, "Courier New",
       //   Courier, monospace;
-      font-size: 1.4rem;
+      font-size: 0.875rem;
 
       @media only screen and (max-width: 600px) {
-        font-size: 1.2rem;
+        font-size: 0.75rem;
       }
     }
 
     /* Code blocks */
     pre[class*="language-"] {
-      padding: 1.6rem;
+      padding: 1rem;
       background: var(--c-code);
     }
 
@@ -282,17 +286,17 @@
 
 .navigateUp {
   position: fixed;
-  left: 5rem;
-  bottom: 5rem;
+  left: 3.125rem;
+  bottom: 3.125rem;
   background-color: var(--c-gray-light);
-  padding: 1rem;
+  padding: 0.625rem;
   border-radius: 50%;
-  height: 5rem;
-  width: 5rem;
+  height: 3.125rem;
+  width: 3.125rem;
   cursor: pointer;
 
   & > svg {
-    height: 3rem;
+    height: 1.875rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -300,7 +304,7 @@
     transition: color 0.3 ease;
     color: var(--c-text-gray);
     @media only screen and (max-width: 600px) {
-      height: 2rem;
+      height: 1.25rem;
     }
   }
 
@@ -310,22 +314,22 @@
 
   @media only screen and (max-width: 600px) {
     left: unset;
-    right: 1rem;
-    bottom: 1rem;
-    height: 4rem;
-    width: 4rem;
+    right: 0.625rem;
+    bottom: 0.625rem;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 }
 
 .rehype-code-title {
-  margin-top: 2rem;
-  margin-bottom: -2.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: -1.5625rem;
   background-color: var(--c-code-title);
   color: #9ca3af;
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 0.625rem 0.625rem 0.9375rem 0.625rem;
   border-radius: 0.3em 0.3em 0 0;
   line-height: 1;
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
 
 }
 
@@ -333,15 +337,15 @@
   content:"#";
   color: white;
   display: inline-block;
-  padding: 0 .5rem;
+  padding: 0 .3125rem;
   line-height: 1;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 }
 
 .blog__anchor {
   display: block;
   position: absolute;
-  left: -2.6rem;
+  left: -1.625rem;
   opacity: 0;
 
   @media only screen and (max-width: 800px) {

@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 1.25rem 0;
 
   @media only screen and (max-width: 1024px) {
-    padding: 2rem 4rem;
+    padding: 1.25rem 2.5rem;
   }
   @media only screen and (max-width: 600px) {
-    padding: 2rem 2rem;
+    padding: 1.25rem 1.25rem;
   }
 
   &__hiddenNav {
@@ -37,17 +37,17 @@
 
     &__navlinks {
       list-style: none;
-      padding: 8rem 2.5rem 0;
+      padding: 5rem 1.5625rem 0;
     }
 
     &__navlink {
       color: var(--c-black-md);
-      font-size: 1.8rem;
+      font-size: 1.125rem;
       font-family: "IBM Plex Sans", sans-serif;
       font-weight: 600;
-      padding: 1rem 0;
+      padding: 0.625rem 0;
       display: block;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
       transition: color 0.3s;
     }
   }
@@ -72,8 +72,8 @@
 
   // &__wrapper-active {
   //   .navigation {
-  //     padding-top: 1rem;
-  //     padding-bottom: 1rem;
+  //     padding-top: 0.625rem;
+  //     padding-bottom: 0.625rem;
   //   }
   // }
 
@@ -93,19 +93,19 @@
   &__logo {
     color: var(--c-black-md);
     font-family: "Playfair Display", sans-serif;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
     transition: color 0.3s;
 
     @media only screen and (max-width: 500px) {
-      font-size: 1.8rem;
+      font-size: 1.125rem;
     }
   }
 
   &__navlinks {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 1.875rem;
     @media only screen and (max-width: 600px) {
       display: none;
     }
@@ -114,11 +114,11 @@
   &__navlink {
     display: block;
     color: var(--c-black-md);
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     font-weight: normal;
     line-height: 1;
-    padding: 0.8rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.3125rem;
     transition: color 0.3s;
 
     &:hover {
@@ -133,7 +133,7 @@
 
   &__theme {
     cursor: pointer;
-    padding: 0.8rem;
+    padding: 0.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -148,7 +148,7 @@
     }
 
     & > svg {
-      height: 2rem;
+      height: 1.25rem;
       fill: var(--c-black-dark);
     }
   }

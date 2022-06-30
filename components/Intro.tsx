@@ -12,12 +12,12 @@ const Intro = () => {
               Software Engineer and Designer.
             </p>
 
-            <p className="intro__job mt-1">
+            <p className="intro__job mt-2.5">
               Hello! I&apos;m a Full-Stack Web Developer based in Nepal who
               loves bringing ideas to life through design and code.
             </p>
 
-            <p className="intro__job mt-1">
+            <p className="intro__job mt-2.5">
               If you have a project in mind, think you need my help or just
               fancy saying hey, then get in touch.
             </p>

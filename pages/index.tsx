@@ -24,7 +24,7 @@ const Home: NextPage<{ allPostsData: Post[] }> = ({
 
       <section className="projects limit-width-lg">
         <h2 className="text-left heading-lg">Projects</h2>
-        <p className="paragraph mb-12">
+        <p className="paragraph mb-8">
           These are some of the projects that I have built over the years that
           reflect my passion in software and design.
         </p>
@@ -124,7 +124,7 @@ const Home: NextPage<{ allPostsData: Post[] }> = ({
             </a>
           </Link>
         </div>
-        <div className="py-20"></div>
+        <div className="py-12"></div>
       </section>
 
       <Skills />

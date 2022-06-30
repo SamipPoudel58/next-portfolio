@@ -1,10 +1,10 @@
 .blog {
-  padding-top: 4rem;
+  padding-top: 2.5rem;
   @media only screen and (max-width: 1024px) {
-    padding: 2rem 4rem 0;
+    padding: 1.25rem 2.5rem 0;
   }
   @media only screen and (max-width: 600px) {
-    padding: 2rem 2rem 0;
+    padding: 1.25rem 1.25rem 0;
   }
   // &__wrapper {
   //   @media only screen and (max-width: 600px) {
@@ -12,14 +12,14 @@
   //   }
   // }
   &__heading {
-    font-size: 4.8rem;
+    font-size: 3rem;
     font-family: "PlayFair Display";
     color: var(--c-black);
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.75rem;
     text-align: center;
   }
   &__intro {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     color: var(--c-black-md);
   }
 
@@ -27,10 +27,10 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    gap: 3rem 0;
+    gap: 1.875rem 0;
     flex-wrap: wrap;
-    padding: 5rem 0 0;
-    margin-bottom: 2rem;
+    padding: 3.125rem 0 0;
+    margin-bottom: 1.25rem;
 
     @media only screen and (max-width: 600px) {
       flex-direction: column;
@@ -52,12 +52,12 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 1.25rem;
     // margin-bottom: 4rem;
     // background-color: white;
     // border: 1px solid #e5e7eb;
 
-    border-radius: 1rem;
+    border-radius: 0.625rem;
 
     @media only screen and (max-width: 600px) {
       gap: 0;
@@ -68,19 +68,19 @@
     &-title {
       font-family: "IBM Plex Sans", sans-serif;
       font-weight: 600;
-      font-size: 2.4rem;
+      font-size: 1.5rem;
       color: var(--c-black-dark);
       transition: color 0.3s;
       line-height: 1.4;
       word-wrap: break-word;
       @media only screen and (max-width: 600px) {
-        font-size: 2rem;
+        font-size: 1.25rem;
       }
     }
     &-date {
-      font-size: 1.4rem;
+      font-size: 0.875rem;
       color: var(--c-black-md);
-      margin-top: 1rem;
+      margin-top: 0.625rem;
       // @media only screen and (max-width: 600px) {
       //   text-align: center;
       // }
@@ -92,6 +92,6 @@
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
   }
 }
