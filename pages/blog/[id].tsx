@@ -6,11 +6,13 @@ import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { Post } from '../../types/post';
 import Counter from '../../components/Counter';
+import Questionnaire from '../../components/Questionnaire';
 import CustomPre from '../../components/CustomPre';
 
 const components = {
-  Counter,
   pre: CustomPre,
+  Counter,
+  Questionnaire,
 };
 
 export default function Blog({ postData }: { postData: Post }) {

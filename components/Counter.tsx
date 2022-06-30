@@ -4,7 +4,7 @@ const Counter = () => {
   const [count, setCount] = useState(69);
 
   return (
-    <div className="flex space-x-4 items-center p-6 rounded-md bg-slate-200 my-8">
+    <div className="flex justify-center space-x-4 items-center p-6 rounded-md bg-slate-200 my-8">
       <button
         className="bg-sky-500 text-white rounded-md px-4 py-1"
         onClick={() => setCount((prev) => (prev === 0 ? 0 : prev - 1))}
