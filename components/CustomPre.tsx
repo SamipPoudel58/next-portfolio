@@ -24,7 +24,7 @@ const CustomPre = ({ children }: { children: React.ReactNode }) => {
           !copied && setCopied(true);
           navigator.clipboard.writeText(preRef.current?.innerText as string);
         }}
-        className="text-sky-200 absolute top-2 right-3 cursor-pointer hidden group-hover:flex opacity-50 hover:opacity-100 flex-col items-end"
+        className="text-sky-200 w-[50px] absolute top-2 right-0 cursor-pointer hidden group-hover:flex opacity-50 hover:opacity-100 flex-col items-center"
       >
         {copied ? (
           <>

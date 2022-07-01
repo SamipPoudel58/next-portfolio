@@ -1,7 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import Contact from '../components/Contact';
-import Counter from '../components/Counter';
 import Footer from '../components/Footer';
 import Intro from '../components/Intro';
 import MetaHead from '../components/MetaHead';
