@@ -10,7 +10,7 @@ import Questionnaire from '../../components/Questionnaire';
 import CustomPre from '../../components/CustomPre';
 
 const components = {
-  pre: CustomPre,
+  pre: CustomPre as any,
   Counter,
   Questionnaire,
 };

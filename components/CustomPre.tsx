@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
-const CustomPre = ({ children }: { children: JSX.Element }) => {
+const CustomPre = ({ children }: { children: React.ReactNode }) => {
   const [copied, setCopied] = useState(false);
   const preRef = useRef<HTMLPreElement>(null);
 
@@ -15,7 +15,9 @@ const CustomPre = ({ children }: { children: JSX.Element }) => {
   return (
     <pre
       ref={preRef}
-      className={`${children?.props?.className} relative group`}
+      className={`${
+        (children as JSX.Element)?.props?.className
+      } relative group`}
     >
       <div
         onClick={() => {
