@@ -230,9 +230,7 @@
       }
     }
 
-    pre[class*="language-"] {
-      margin: 1.25rem 0;
-    }
+    
 
     /* Inline code */
     :not(pre) > code[class*="language-"] {
@@ -254,6 +252,10 @@
       }
     }
 
+    pre[class*="language-"] {
+      margin: 1.25rem 0 2rem;
+    }
+
     code[class*="language-"],
     pre[class*="language-"] {
       // font-family: "Fira Code", Consolas, Inconsolata, Monaco, "Courier New",
@@ -266,7 +268,7 @@
     }
 
     /* Code blocks */
-    pre {
+    pre[class*="language-"] {
       padding: 1rem;
       background: var(--c-code) !important;
       z-index: 2;
