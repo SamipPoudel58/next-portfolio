@@ -12,8 +12,8 @@ const NavLink = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  const { pathname } = useRouter();
-  const isActive = exact ? pathname === href : pathname.startsWith(href);
+  const { asPath } = useRouter();
+  const isActive = exact ? asPath === href : asPath.startsWith(href);
 
   if (isActive) {
     props.className += ' active';

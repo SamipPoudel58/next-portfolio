@@ -36,7 +36,7 @@ const Navigation = () => {
         <nav className="navigation__mainNav">
           <ul className="navigation__navlinks">
             <li>
-              <NavLink className="navigation__navlink" href="/">
+              <NavLink exact className="navigation__navlink" href="/">
                 Home
               </NavLink>
             </li>
@@ -47,7 +47,7 @@ const Navigation = () => {
             </li>
 
             <li>
-              <NavLink className="navigation__navlink" href="/blog">
+              <NavLink exact className="navigation__navlink" href="/blog">
                 Blog
               </NavLink>
             </li>
