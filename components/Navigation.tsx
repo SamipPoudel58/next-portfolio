@@ -18,6 +18,7 @@ const Navigation = () => {
     localStorage.setItem('darkMode', String(!darkMode));
 
     document.body.classList.toggle('dark');
+    document.documentElement.style.colorScheme = !darkMode ? 'dark' : 'light';
   };
 
   const burgerClickHandler = () => {

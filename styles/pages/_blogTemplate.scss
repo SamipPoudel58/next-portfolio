@@ -268,7 +268,7 @@
     /* Code blocks */
     pre {
       padding: 1rem;
-      background: var(--c-code);
+      background: var(--c-code) !important;
       z-index: 2;
     }
 
