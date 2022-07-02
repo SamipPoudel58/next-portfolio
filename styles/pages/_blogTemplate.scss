@@ -75,7 +75,7 @@
       font-size: 1.125rem;
       margin-bottom: 0.625rem;
       @media only screen and (max-width: 600px) {
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
     }
 
@@ -109,7 +109,7 @@
     li {
       font-size: 1.125rem;
       @media only screen and (max-width: 600px) {
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
     }
 
@@ -225,7 +225,7 @@
         margin-bottom: 0rem;
         word-wrap: break-word;
         @media only screen and (max-width: 600px) {
-          font-size: 0.875rem;
+          font-size: 1rem;
         }
       }
     }
@@ -261,10 +261,6 @@
       // font-family: "Fira Code", Consolas, Inconsolata, Monaco, "Courier New",
       //   Courier, monospace;
       font-size: 0.875rem;
-
-      @media only screen and (max-width: 600px) {
-        font-size: 0.75rem;
-      }
     }
 
     /* Code blocks */
@@ -335,6 +331,10 @@
   line-height: 1;
   font-size: 0.9375rem;
 
+  @media only screen and (max-width: 600px) {
+    font-size: 0.75rem;
+  }
+
 }
 
 .rehype-code-title::before{
@@ -344,6 +344,9 @@
   padding: 0 .3125rem;
   line-height: 1;
   font-size: 1.125rem;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.875rem;
+  }
 }
 
 .blog__anchor {

@@ -15,6 +15,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&family=Karla:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
 
       <Script async src="https://cdn.splitbee.io/sb.js"></Script>
