@@ -43,8 +43,8 @@ export default function Blog({ postData }: { postData: Post }) {
         title={postData.title}
         ogtitle={postData.title}
         description={postData.description}
-        image={`https:${postData.cover}`}
-        url={`https://www.samippoudel.com.np/blog/${postData.title}`}
+        image={`https://samip.vercel.app${postData.cover}`}
+        url={`https://samip.vercel.app/blog/${postData.title}`}
         typeOfContent="article"
       />
 

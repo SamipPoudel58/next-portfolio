@@ -17,7 +17,7 @@ const Blog: NextPage<{ allPostsData: Post[] }> = ({
       title="Blogs | Samip Poudel"
       ogtitle="Blogs by Samip Poudel"
       description="I write and share about programming and my journey as a software engineer. I like to write about web development, UI/UX and a bit about life as I experience it."
-      url="https://www.samippoudel.com.np/blog"
+      url="https://samip.vercel.app/blog"
     />
     <Navigation />
     <div className="py-8"></div>

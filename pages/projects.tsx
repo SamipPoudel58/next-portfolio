@@ -12,7 +12,7 @@ const Projects: NextPage = () => (
       title="Projects | Samip Poudel"
       ogtitle="Projects made by Samip Poudel"
       description="These are some of the projects that I have built over the years. These project reflect my passion in software and design. My most used tools are Javascript, React, Node and MongoDB."
-      url="https://www.samippoudel.com.np/projects"
+      url="https://samip.vercel.app/projects"
     />
     <Navigation />
     <div className="py-8"></div>
