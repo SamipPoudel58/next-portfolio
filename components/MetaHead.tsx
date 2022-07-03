@@ -27,7 +27,7 @@ const MetaHead = ({
         name="keyword"
         content="Samip Poudel software developer freelancer designer react nodejs javascript programming web portfolio blog Kathmandu Nepal"
       ></meta>
-      <meta name="robots" content="index,follow,archive" />
+      <meta name="robots" content="index, follow" />
 
       <meta property="og:title" content={ogtitle} />
       <meta property="og:type" content={typeOfContent} />

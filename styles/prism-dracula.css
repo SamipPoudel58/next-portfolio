@@ -78,7 +78,8 @@ pre[class*='language-'] {
 }
 
 .token.class-name {
-  color: #ffffb6;
+  color: #fde68a;
+  /* color: #ffffb6; */
   /* text-decoration: underline; */
 }
 
