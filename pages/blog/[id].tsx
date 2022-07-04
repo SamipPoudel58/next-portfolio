@@ -11,6 +11,9 @@ import CustomPre from '../../components/CustomPre';
 
 const components = {
   pre: CustomPre as any,
+  p: (props: any) => (
+    <p className="mb-4 text-base sm:text-[18px]">{props.children}</p>
+  ),
   Counter,
   Questionnaire,
 };

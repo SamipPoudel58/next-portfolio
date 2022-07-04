@@ -11,7 +11,7 @@ const Counter = () => {
       >
         Decrease
       </button>
-      <p className="!mb-0 text-center block min-w-[100px] text-slate-500">
+      <p className="text-center block min-w-[100px] text-slate-500">
         Count:{' '}
         <span className="font-bold text-[color:var(--c-black-dark)] inline-block min-w-[30px]">
           {' '}
