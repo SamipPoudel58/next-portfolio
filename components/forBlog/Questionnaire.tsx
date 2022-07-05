@@ -12,13 +12,13 @@ const Questionnaire = ({
   const [selectedAnswer, setSelectedAnswer] = useState<number>(-1);
   return (
     <div className="my-8">
-      <p className="font-bold text-center">{question}</p>
+      <p className="font-bold text-center text-lg mb-3">{question}</p>
 
-      <div className="space-y-4 max-w-[500px] mx-auto">
+      <div className="space-y-3 max-w-[500px] mx-auto">
         {answers.map((answer: string, idx) => (
           <button
             onClick={() => setSelectedAnswer(idx)}
-            className={`border-[1px] py-2 border-slate-300 rounded-full w-full ${
+            className={`border-[1px] py-2 border-[color:var(--c-table-border)] rounded-full w-full ${
               idx === selectedAnswer
                 ? idx === correctAnswer
                   ? 'bg-emerald-500 text-white'

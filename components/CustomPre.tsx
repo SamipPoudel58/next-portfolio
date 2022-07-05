@@ -17,7 +17,7 @@ const CustomPre = ({ children }: { children: React.ReactNode }) => {
       ref={preRef}
       className={`${
         (children as JSX.Element)?.props?.className
-      } relative group`}
+      } relative group my-8`}
     >
       <div
         onClick={() => {

@@ -14,6 +14,11 @@ const components = {
   p: (props: any) => (
     <p className="mb-4 text-base sm:text-[18px]">{props.children}</p>
   ),
+  table: (props: any) => (
+    <div className="border-[1px] overflow-hidden border-[color:var(--c-table-border)] rounded-md my-8">
+      <table>{props.children}</table>
+    </div>
+  ),
   Counter,
   Questionnaire,
 };
@@ -72,8 +77,7 @@ export default function Blog({ postData }: { postData: Post }) {
           </svg>
         </div>
       </a>
-      <div className="py-3"></div>
-      <div className="py-3"></div>
+      <div className="py-6"></div>
       <section className="blogTemplate limit-width-blog">
         <img
           id="blogTemplate__cover"

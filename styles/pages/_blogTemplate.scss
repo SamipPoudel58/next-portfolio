@@ -19,7 +19,7 @@
   &__title {
     margin-top: 1.875rem;
     font-size: 2.25rem;
-    font-family: "IBM Plex Sans";
+    font-family: 'IBM Plex Sans';
     font-weight: 700;
     line-height: 1.4;
     color: var(--c-black);
@@ -57,7 +57,7 @@
     font-size: 1rem;
     line-height: 1.625;
     // color: var(--c-text-black);
-    font-family: "Karla", sans-serif;
+    font-family: 'Karla', sans-serif;
     font-weight: 400;
 
     img {
@@ -81,7 +81,7 @@
 
     ul,
     ol {
-      margin: 1.25rem 0 1.25rem 1.25rem;
+      margin: 2rem 0 2rem 1.25rem;
     }
 
     h2 + ul {
@@ -95,7 +95,7 @@
 
     ul.contains-task-list {
       list-style: none;
-      margin: 1.25rem 0;
+      margin: 2rem 0;
     }
 
     li {
@@ -111,12 +111,12 @@
         margin-right: 0.5rem;
 
         &::after {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           height: 120%;
           width: 120%;
-          background-color: white;
+          background-color: var(--c-blockquote);
           border: 2px solid var(--c-gray-light);
           border-radius: 3px;
         }
@@ -126,7 +126,7 @@
         // position: relative;
 
         &::after {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           height: 120%;
@@ -144,7 +144,7 @@
 
     h3,
     h2 {
-      font-family: "IBM Plex Sans", sans-serif;
+      font-family: 'IBM Plex Sans', sans-serif;
       color: var(--c-black-dark);
       padding-bottom: 0.9375rem;
       font-weight: 700;
@@ -163,7 +163,7 @@
     }
 
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
 
       @media only screen and (max-width: 600px) {
         font-size: 1.125rem;
@@ -179,7 +179,7 @@
     }
 
     hr {
-      margin: 3.125rem 0;
+      margin: 3rem 0;
       background-color: var(--c-gray-light);
       border: none;
       height: 1px;
@@ -193,6 +193,36 @@
       text-align: left;
       font-size: 1.125rem;
       line-height: 1.7;
+      border-collapse: collapse;
+
+      thead {
+        // background-color:#e2e8f0;
+        background-color: var(--c-blockquote);
+        border-bottom: 2px solid var(--c-table-border);
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: var(--c-black);
+
+        th {
+          padding: 0.8rem 1rem;
+          @media only screen and (max-width: 600px) {
+            padding: 0.6rem 0.8rem;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          padding: 0.8rem 1rem;
+          border-bottom: 1px solid var(--c-table-border);
+          @media only screen and (max-width: 600px) {
+            padding: 0.6rem 0.8rem;
+          }
+        }
+
+        tr:last-child td {
+          border-bottom: none;
+        }
+      }
 
       @media only screen and (max-width: 600px) {
         font-size: 1rem;
@@ -203,9 +233,9 @@
     blockquote {
       border-left: 3px solid var(--c-primary);
       padding: 0.9375rem 0.625rem 0.9375rem 1.25rem;
-      background-color: rgba(59,130,246,0.1);
+      background-color: rgba(59, 130, 246, 0.1);
       // font-style: italic;
-      margin: 1.25rem 0;
+      margin: 2rem 0;
       border-radius: 0.3125rem;
 
       @media only screen and (max-width: 600px) {
@@ -222,10 +252,8 @@
       }
     }
 
-    
-
     /* Inline code */
-    :not(pre) > code[class*="language-"] {
+    :not(pre) > code[class*='language-'] {
       padding: 0.25rem;
       border-radius: 0.2em;
       background: var(--c-blockquote);
@@ -244,19 +272,13 @@
       }
     }
 
-    pre[class*="language-"] {
-      margin: 1.25rem 0 2rem;
-    }
-
-    code[class*="language-"],
-    pre[class*="language-"] {
-      // font-family: "Fira Code", Consolas, Inconsolata, Monaco, "Courier New",
-      //   Courier, monospace;
+    code[class*='language-'],
+    pre[class*='language-'] {
       font-size: 0.875rem;
     }
 
     /* Code blocks */
-    pre[class*="language-"] {
+    pre[class*='language-'] {
       padding: 1rem;
       background: var(--c-code) !important;
       z-index: 2;
@@ -314,8 +336,8 @@
 }
 
 .rehype-code-title {
-  margin-top: 1.25rem;
-  margin-bottom: -1.45rem;
+  margin-top: 2rem;
+  margin-bottom: -2.2rem;
   background-color: var(--c-code-title);
   color: #9ca3af;
   padding: 0.625rem 0.625rem 0.9375rem 0.625rem;
@@ -326,14 +348,13 @@
   @media only screen and (max-width: 600px) {
     font-size: 0.75rem;
   }
-
 }
 
-.rehype-code-title::before{
-  content:"#";
+.rehype-code-title::before {
+  content: '#';
   color: white;
   display: inline-block;
-  padding: 0 .3125rem;
+  padding: 0 0.3125rem;
   line-height: 1;
   font-size: 1.125rem;
   @media only screen and (max-width: 600px) {
