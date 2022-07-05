@@ -30,6 +30,7 @@ const Navigation = () => {
       ?.classList.toggle('navigation__wrapper-fixed');
     document.getElementById('burger-container')?.classList.toggle('open');
   };
+
   return (
     <header className="navigation__wrapper">
       <div className="limit-width-lg navigation">
