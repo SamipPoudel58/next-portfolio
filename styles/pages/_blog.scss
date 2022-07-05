@@ -1,5 +1,6 @@
 .blog {
-  padding-top: 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
   @media only screen and (max-width: 1024px) {
     padding: 1.25rem 2.5rem 0;
   }
@@ -13,7 +14,7 @@
   // }
   &__heading {
     font-size: 3rem;
-    font-family: "PlayFair Display";
+    font-family: 'PlayFair Display';
     color: var(--c-black);
     margin-bottom: 0.75rem;
     text-align: center;
@@ -66,7 +67,7 @@
 
   &__details {
     &-title {
-      font-family: "IBM Plex Sans", sans-serif;
+      font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 600;
       font-size: 1.5rem;
       color: var(--c-black-dark);

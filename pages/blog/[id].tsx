@@ -12,7 +12,9 @@ import CustomPre from '../../components/CustomPre';
 const components = {
   pre: CustomPre as any,
   p: (props: any) => (
-    <p className="mb-4 text-base sm:text-[18px]">{props.children}</p>
+    <p className="mb-4 leading-[1.7] text-base sm:text-[18px]">
+      {props.children}
+    </p>
   ),
   table: (props: any) => (
     <div className="border-[1px] overflow-hidden border-[color:var(--c-table-border)] rounded-md my-8">

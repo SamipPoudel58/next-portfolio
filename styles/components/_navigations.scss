@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 0;
+  padding: 1.5rem 0 0;
 
   @media only screen and (max-width: 1024px) {
     padding: 1.25rem 2.5rem;
@@ -10,8 +10,6 @@
   @media only screen and (max-width: 600px) {
     padding: 1.25rem 1.25rem;
   }
-
-  
 
   &__wrapper {
     position: absolute;
@@ -53,7 +51,7 @@
 
   &__logo {
     color: var(--c-black-md);
-    font-family: "Playfair Display", sans-serif;
+    font-family: 'Playfair Display', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     transition: color 0.3s;
@@ -146,7 +144,7 @@
     &__navlink {
       color: var(--c-black-md);
       font-size: 1.125rem;
-      font-family: "IBM Plex Sans", sans-serif;
+      font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 600;
       padding: 0.625rem 0;
       display: block;

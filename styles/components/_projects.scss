@@ -1,6 +1,6 @@
 .projects {
-  padding-top: 2.5rem;
-  padding-bottom: 3.75rem;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
 
   @media only screen and (max-width: 1024px) {
     padding: 1.25rem 1.5625rem 3.75rem;
@@ -50,7 +50,7 @@
   }
 
   &__title {
-    font-family: "IBM Plex Sans";
+    font-family: 'IBM Plex Sans';
     font-size: 2.25rem;
     font-weight: 700;
     letter-spacing: 0;

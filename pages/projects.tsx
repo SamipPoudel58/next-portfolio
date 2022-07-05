@@ -17,7 +17,7 @@ const Projects: NextPage = () => (
     <Navigation />
     <div className="py-8"></div>
 
-    <section className="projects limit-width-lg ">
+    <section className="projects limit-width-lg">
       <h2 className="heading-lg text-left">Projects</h2>
       <p className="paragraph mb-8">
         These are some of the projects that I have built over the years that
