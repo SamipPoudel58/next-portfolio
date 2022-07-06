@@ -10,6 +10,7 @@ const Navigation = () => {
     if (JSON.parse(localStorage.getItem('darkMode') as string) === true) {
       setDarkMode(true);
       document.body.classList.add('dark');
+      document.documentElement.style.colorScheme = !darkMode ? 'dark' : 'light';
     }
   }, []);
 
