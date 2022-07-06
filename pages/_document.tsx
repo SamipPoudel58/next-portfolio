@@ -16,9 +16,12 @@ export default function Document() {
           rel="stylesheet"
         />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-      </Head>
 
-      <Script async src="https://cdn.splitbee.io/sb.js"></Script>
+        {typeof window !== 'undefined' &&
+          window.location.hostname === 'www.samippoudel.com.np' && (
+            <script async src="https://cdn.splitbee.io/sb.js"></script>
+          )}
+      </Head>
       <body>
         <Main />
         <NextScript />
