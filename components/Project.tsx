@@ -62,6 +62,8 @@ const Project = ({
         </div>
         <div className="projects__links">
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             href={link}
             className="projects__links-live"
             aria-label={`visit the live version of Samip Poudel's project named '${title}'`}

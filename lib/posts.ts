@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
-import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
 import { Post } from '../types/post';
 import mdxPrism from 'mdx-prism';
@@ -26,13 +25,14 @@ export function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
 
-    const { text } = readingTime(fileContents);
+    const readingTime =
+      Math.ceil(fileContents.split(' ').length / 200) + ' min read';
 
     // Combine the data with the id
     return {
       ...(matterResult.data as Post),
       id,
-      readingTime: text,
+      readingTime,
     };
   });
   // Sort posts by date
@@ -79,7 +79,8 @@ export async function getPostData(id: string) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
-  const { text } = readingTime(fileContents);
+  const readingTime =
+    Math.ceil(fileContents.split(' ').length / 200) + ' min read';
 
   const mdxSource = await serialize(matterResult.content, {
     mdxOptions: {
@@ -101,7 +102,7 @@ export async function getPostData(id: string) {
   // Combine the data with the id and contentHtml
   return {
     id,
-    readingTime: text,
+    readingTime,
     mdxSource,
     ...matterResult.data,
   };
