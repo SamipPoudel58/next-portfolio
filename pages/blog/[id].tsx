@@ -62,23 +62,23 @@ export default function Blog({ postData }: { postData: Post }) {
         <div className="progress-bar" id="myBar"></div>
       </div>
       <Navigation />
-      <a href="#blogTemplate__cover">
-        <div className="navigateUp">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 7l4-4m0 0l4 4m-4-4v18"
-            />
-          </svg>
-        </div>
-      </a>
+
+      <div onClick={() => window.scrollTo(0, 0)} className="navigateUp">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M8 7l4-4m0 0l4 4m-4-4v18"
+          />
+        </svg>
+      </div>
+
       <div className="py-6"></div>
       <section className="blogTemplate limit-width-blog">
         <img
