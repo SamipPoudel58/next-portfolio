@@ -11,7 +11,7 @@ const ProductivityTomorrow = () => {
         ogtitle="Productivity Tomorrow by Samip Poudel"
         description="Productivity Tomorrow! Because today is almost over!"
         url="https://samippoudel.com.np/books/productivity-tomorrow"
-        image="https://samip.vercel.app/images/pt-og-cover.png"
+        image="https://samip.vercel.app/pt-og-cover.png"
       />
       <Navigation />
 
