@@ -6,7 +6,11 @@ module.exports = {
     './posts/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'var(--c-primary)',
+      },
+    },
   },
   plugins: [],
 };
