@@ -365,8 +365,15 @@
 .blog__anchor {
   display: block;
   position: absolute;
-  left: -1.625rem;
+  left: -1.9rem;
   opacity: 0;
+  padding: 0 0 4px;
+  border-radius: 3px;
+
+  &:focus {
+    opacity: 1;
+    outline: 2px solid var(--c-primary);
+  }
 
   @media only screen and (max-width: 800px) {
     display: none;
