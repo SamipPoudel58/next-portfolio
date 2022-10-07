@@ -5,7 +5,7 @@
     "description": "An advanced social media site",
     "image": "/images/project1.webp",
     "stacks": ["React", "Redux", "Node.js", "MongoDB"],
-    "link": "https://samiptter.herokuapp.com",
+    "link": "https://samiptter.com",
     "github": "/blog/samiptter"
   },
   {
