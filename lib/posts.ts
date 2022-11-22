@@ -8,6 +8,8 @@ import mdxPrism from 'mdx-prism';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -84,8 +86,9 @@ export async function getPostData(id: string) {
 
   const mdxSource = await serialize(matterResult.content, {
     mdxOptions: {
-      remarkPlugins: [remarkGfm], //remarkGfm allows us to use tables and checkboxes like github
+      remarkPlugins: [remarkMath, remarkGfm], //remarkGfm allows us to use tables and checkboxes like github
       rehypePlugins: [
+        rehypeKatex,
         rehypeSlug,
         [
           rehypeAutolinkHeadings,

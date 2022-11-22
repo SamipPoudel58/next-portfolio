@@ -5,8 +5,9 @@ import MetaHead from '../../components/MetaHead';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { Post } from '../../types/post';
-import Counter from '../../components/forBlog/Counter';
-import Questionnaire from '../../components/forBlog/Questionnaire';
+import Counter from '../../components/mdx-components/Counter';
+import Questionnaire from '../../components/mdx-components/Questionnaire';
+import ProgressBarComparison from '../../components/mdx-components/ProgressBarComparison';
 import CustomPre from '../../components/CustomPre';
 
 const components = {
@@ -23,6 +24,7 @@ const components = {
   ),
   Counter,
   Questionnaire,
+  ProgressBarComparison,
 };
 
 export default function Blog({ postData }: { postData: Post }) {

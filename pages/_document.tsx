@@ -15,6 +15,13 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&family=Karla:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+          integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+          crossOrigin="anonymous"
+        />
+
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
         <script async src="https://cdn.splitbee.io/sb.js"></script>

@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--c-primary)',
+        'light-gray': 'var(--c-gray-light)',
+        'med-gray': 'var(--c-text-gray)',
       },
     },
   },
