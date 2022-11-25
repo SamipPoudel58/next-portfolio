@@ -169,6 +169,10 @@
 /* The progress bar (scroll indicator) */
 .progress-bar {
   height: 6px;
-  background: var(--c-primary);
+  background: linear-gradient(
+    to bottom right,
+    var(--c-primary-dark),
+    var(--c-primary-light)
+  );
   width: 0%;
 }

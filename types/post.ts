@@ -7,5 +7,6 @@ export type Post = {
   cover: string;
   publishedDate: string;
   readingTime: string;
+  colors: string[];
   mdxSource: { compiledSource: string };
 };

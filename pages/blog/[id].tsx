@@ -61,7 +61,15 @@ export default function Blog({ postData }: { postData: Post }) {
       />
 
       <div className="progress-container">
-        <div className="progress-bar" id="myBar"></div>
+        <div
+          style={
+            postData.colors && {
+              background: `linear-gradient(to right bottom, #${postData.colors[0]}, #${postData.colors[1]} )`,
+            }
+          }
+          className="progress-bar"
+          id="myBar"
+        ></div>
       </div>
       <Navigation />
 
