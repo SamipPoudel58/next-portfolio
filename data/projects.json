@@ -14,7 +14,7 @@
     "description": "A complete ecommerce site",
     "image": "/images/project2.webp",
     "stacks": ["Node.js", "Express", "MongoDB", "EJS"],
-    "link": "https://shopmip.herokuapp.com",
+    "link": "https://shopmip.onrender.com/",
     "github": "https://github.com/SamipPoudel58/shopmip"
   },
   {
