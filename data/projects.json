@@ -23,7 +23,7 @@
     "description": "Product Showcase and Management Website",
     "image": "/images/project3.webp",
     "stacks": ["React", "Redux", "Node.js", "MongoDB"],
-    "link": "https://thehungrywords.herokuapp.com",
+    "link": "https://thehungrywords.onrender.com",
     "github": "https://github.com/SamipPoudel58"
   },
   {
