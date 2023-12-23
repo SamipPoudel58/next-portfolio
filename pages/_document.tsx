@@ -22,7 +22,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
 
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
 
         <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
