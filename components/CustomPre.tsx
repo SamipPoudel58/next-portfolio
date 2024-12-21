@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const CustomPre = ({ children }: { children: React.ReactNode }) => {
   const [copied, setCopied] = useState(false);
@@ -24,7 +24,7 @@ const CustomPre = ({ children }: { children: React.ReactNode }) => {
           !copied && setCopied(true);
           navigator.clipboard.writeText(preRef.current?.innerText as string);
         }}
-        className="text-sky-200 w-[50px] absolute top-2 right-0 cursor-pointer hidden group-hover:flex opacity-50 hover:opacity-100 flex-col items-center"
+        className="text-slate-50 w-[50px] absolute top-2 right-0 cursor-pointer hidden group-hover:flex opacity-70 hover:opacity-100 flex-col items-center"
       >
         {copied ? (
           <>
@@ -46,16 +46,16 @@ const CustomPre = ({ children }: { children: React.ReactNode }) => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
-            fill="none"
             viewBox="0 0 24 24"
+            strokeWidth="2"
             stroke="currentColor"
-            strokeWidth={2}
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-            />
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+            <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
           </svg>
         )}
       </div>

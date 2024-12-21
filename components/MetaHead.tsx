@@ -49,8 +49,8 @@ MetaHead.defaultProps = {
   ogtitle: 'Samip Poudel | Full-Stack Developer | Designer',
   description:
     "Hey, I'm Samip. A freelance Full-Stack Web Developer from Nepal. I love design as much as Software Development. I work with JavaScript, TypeScript, React, Node.js & MongoDB.",
-  image: 'https://samip.vercel.app/samip_poudel_open_graph.png',
-  url: 'https://samip.vercel.app',
+  image: 'https://samippoudel.com.np/samip_poudel_open_graph.png',
+  url: 'https://samippoudel.com.np',
   typeOfContent: 'website',
 };
 

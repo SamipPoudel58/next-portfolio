@@ -340,10 +340,12 @@
   margin-bottom: -2.2rem;
   background-color: var(--c-code-title);
   color: #9ca3af;
-  padding: 0.625rem 0.625rem 0.9375rem 0.625rem;
+  padding: 0.625rem;
   border-radius: 0.3em 0.3em 0 0;
   line-height: 1;
   font-size: 0.9375rem;
+  font-family: 'IBM Plex Sans';
+  font-weight: 600;
 
   @media only screen and (max-width: 600px) {
     font-size: 0.75rem;
@@ -351,12 +353,12 @@
 }
 
 .rehype-code-title::before {
-  content: '#';
+  content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzI1NTZfMikiPgo8cGF0aCBkPSJNNC41ODMzMyAzLjY2NjAySDguMjVMMTEgNi40MTYwMkgxNy40MTY3QzE3LjkwMjkgNi40MTYwMiAxOC4zNjkyIDYuNjA5MTcgMTguNzEzIDYuOTUyOUMxOS4wNTY4IDcuMjk2OCAxOS4yNSA3LjczMTIgMTkuMjUgOC4yNDkzNVYxNS41ODI3QzE5LjI1IDE2LjA2ODkgMTkuMDU2OCAxNi41MzUyIDE4LjcxMyAxNi44NzlDMTguMzY5MiAxNy4yMjI5IDE3LjkwMjkgMTcuNDE2IDE3LjQxNjcgMTcuNDE2SDQuNTgzM0M0LjA5NzEgMTcuNDE2IDMuNjMwNzkgMTcuMjIyOSAzLjI4Njk3IDE2Ljg3OTBDMi45NDMxNSAxNi41MzUyIDIuNzUgMTYuMDY4OSAyLjc1IDE1LjU4MjdWNS40OTkzNUMyLjc1IDUuMDEzMTIgMi45NDMxNSA0LjU0NjggMy4yODY5NyA0LjIwMjk5QzMuNjMwNzkgMy44NTkxNyA0LjA5NzEgMy42NjYwMiA0LjU4MzMzIDMuNjY2MDJaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMzc1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8yNTU2XzIiPgo8cmVjdCB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==);
   color: white;
   display: inline-block;
-  padding: 0 0.3125rem;
-  line-height: 1;
-  font-size: 1.125rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  font-size: 0.5rem;
   @media only screen and (max-width: 600px) {
     font-size: 0.875rem;
   }
