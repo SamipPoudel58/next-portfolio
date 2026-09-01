@@ -1,0 +1,48 @@
+.reliefBanner {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: var(--banner-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  background-color: #eef6ff;
+  color: #1447e5;
+  font-family: 'Karla', 'Roboto', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+
+  &__long {
+    @media only screen and (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__short {
+    display: none;
+    @media only screen and (max-width: 640px) {
+      display: inline;
+    }
+  }
+
+  &__arrow {
+    height: 0.875rem;
+    width: 0.875rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover &__arrow {
+    transform: translateX(2px);
+  }
+}
+
+// pages sit in a positioned shell that starts below the banner, so the
+// absolutely positioned navigation lines up under it on every page
+.appShell {
+  position: relative;
+}

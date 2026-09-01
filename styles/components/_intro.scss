@@ -11,7 +11,7 @@
   }
 
   &__wrapper {
-    height: 100vh;
+    height: calc(100vh - var(--banner-h));
     max-height: 800px;
     position: relative;
     display: flex;
