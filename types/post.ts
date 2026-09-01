@@ -1,3 +1,5 @@
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
 export type Post = {
   title: string;
   slug: string;
@@ -8,5 +10,5 @@ export type Post = {
   publishedDate: string;
   readingTime: string;
   colors: string[];
-  mdxSource: { compiledSource: string };
+  mdxSource: MDXRemoteSerializeResult;
 };

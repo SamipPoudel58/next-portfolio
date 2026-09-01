@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
 import { Post } from '../types/post';
-import mdxPrism from 'mdx-prism';
+import rehypePrism from 'rehype-prism-plus';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -85,6 +85,11 @@ export async function getPostData(id: string) {
     Math.ceil(fileContents.split(' ').length / 200) + ' min read';
 
   const mdxSource = await serialize(matterResult.content, {
+    // next-mdx-remote 6 strips {expression} props by default. The posts in this
+    // repo are ours and use them for interactive components, so allow them and
+    // keep the guard that blocks eval, Function, process and require.
+    blockJS: false,
+    blockDangerousJS: true,
     mdxOptions: {
       remarkPlugins: [remarkMath, remarkGfm], //remarkGfm allows us to use tables and checkboxes like github
       rehypePlugins: [
@@ -97,7 +102,7 @@ export async function getPostData(id: string) {
           },
         ],
         rehypeCodeTitles,
-        mdxPrism,
+        [rehypePrism, { showLineNumbers: false }],
       ],
     },
   });
